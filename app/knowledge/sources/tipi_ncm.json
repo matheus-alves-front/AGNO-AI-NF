@@ -1,0 +1,183 @@
+{
+    "tipi": {
+        "description": "Tabela de Incidência do IPI - Principais NCMs",
+        "source": "Decreto 11.158/2022 (TIPI 2022)",
+        "items": [
+            {
+                "ncm": "2201.10.00",
+                "descricao": "Águas minerais e águas gaseificadas, não adicionadas de açúcar",
+                "ipi": 0,
+                "unidade": "litro",
+                "categoria": "Bebidas"
+            },
+            {
+                "ncm": "2202.10.00",
+                "descricao": "Águas, incluindo as águas minerais e as águas gaseificadas, adicionadas de açúcar ou de outros edulcorantes ou aromatizadas (REFRIGERANTES)",
+                "ipi": 4,
+                "unidade": "litro",
+                "categoria": "Bebidas"
+            },
+            {
+                "ncm": "2202.99.00",
+                "descricao": "Outras bebidas não alcoólicas, exceto sucos de frutas",
+                "ipi": 4,
+                "unidade": "litro",
+                "categoria": "Bebidas"
+            },
+            {
+                "ncm": "2203.00.00",
+                "descricao": "Cervejas de malte",
+                "ipi": 6,
+                "unidade": "litro",
+                "categoria": "Bebidas Alcoólicas"
+            },
+            {
+                "ncm": "2204.10.00",
+                "descricao": "Vinhos espumantes e vinhos espumosos",
+                "ipi": 10,
+                "unidade": "litro",
+                "categoria": "Bebidas Alcoólicas"
+            },
+            {
+                "ncm": "2204.21.00",
+                "descricao": "Vinhos em recipientes de capacidade não superior a 2 litros",
+                "ipi": 10,
+                "unidade": "litro",
+                "categoria": "Bebidas Alcoólicas"
+            },
+            {
+                "ncm": "2208.30.00",
+                "descricao": "Uísques (Whisky e Whiskey)",
+                "ipi": 30,
+                "unidade": "litro",
+                "categoria": "Bebidas Alcoólicas"
+            },
+            {
+                "ncm": "2208.40.00",
+                "descricao": "Rum e outras aguardentes de cana-de-açúcar (Cachaça)",
+                "ipi": 15,
+                "unidade": "litro",
+                "categoria": "Bebidas Alcoólicas"
+            },
+            {
+                "ncm": "8471.30.00",
+                "descricao": "Máquinas automáticas para processamento de dados, portáteis (Notebooks)",
+                "ipi": 0,
+                "unidade": "unidade",
+                "categoria": "Informática"
+            },
+            {
+                "ncm": "8471.41.00",
+                "descricao": "Máquinas automáticas para processamento de dados (Desktops)",
+                "ipi": 0,
+                "unidade": "unidade",
+                "categoria": "Informática"
+            },
+            {
+                "ncm": "8517.12.00",
+                "descricao": "Telefones para redes celulares (Smartphones)",
+                "ipi": 0,
+                "unidade": "unidade",
+                "categoria": "Telecomunicações"
+            },
+            {
+                "ncm": "8528.72.00",
+                "descricao": "Aparelhos receptores de televisão, em cores (TVs)",
+                "ipi": 5,
+                "unidade": "unidade",
+                "categoria": "Eletrônicos"
+            },
+            {
+                "ncm": "8703.23.00",
+                "descricao": "Automóveis de passageiros, motor 1500 a 3000 cm³",
+                "ipi": 25,
+                "unidade": "unidade",
+                "categoria": "Veículos"
+            },
+            {
+                "ncm": "3004.90.00",
+                "descricao": "Medicamentos para fins terapêuticos ou profiláticos",
+                "ipi": 0,
+                "unidade": "unidade",
+                "categoria": "Medicamentos"
+            },
+            {
+                "ncm": "0401.10.00",
+                "descricao": "Leite e creme de leite, não concentrados",
+                "ipi": 0,
+                "unidade": "litro",
+                "categoria": "Alimentos"
+            },
+            {
+                "ncm": "0402.10.00",
+                "descricao": "Leite e creme de leite, em pó (Leite em pó)",
+                "ipi": 0,
+                "unidade": "kg",
+                "categoria": "Alimentos"
+            },
+            {
+                "ncm": "1905.90.00",
+                "descricao": "Produtos de padaria, pastelaria ou da indústria de bolachas (Biscoitos, Pães)",
+                "ipi": 0,
+                "unidade": "kg",
+                "categoria": "Alimentos"
+            },
+            {
+                "ncm": "2106.90.00",
+                "descricao": "Preparações alimentícias não especificadas (Suplementos, Whey Protein)",
+                "ipi": 0,
+                "unidade": "kg",
+                "categoria": "Alimentos"
+            },
+            {
+                "ncm": "6403.99.00",
+                "descricao": "Calçados com sola exterior de borracha e parte superior de couro",
+                "ipi": 10,
+                "unidade": "par",
+                "categoria": "Vestuário"
+            },
+            {
+                "ncm": "6204.62.00",
+                "descricao": "Calças de algodão para mulheres (Jeans feminino)",
+                "ipi": 0,
+                "unidade": "unidade",
+                "categoria": "Vestuário"
+            },
+            {
+                "ncm": "6203.42.00",
+                "descricao": "Calças de algodão para homens (Jeans masculino)",
+                "ipi": 0,
+                "unidade": "unidade",
+                "categoria": "Vestuário"
+            },
+            {
+                "ncm": "2710.19.00",
+                "descricao": "Óleos de petróleo (Diesel, Gasolina)",
+                "ipi": 0,
+                "unidade": "litro",
+                "categoria": "Combustíveis"
+            },
+            {
+                "ncm": "2711.21.00",
+                "descricao": "Gás natural",
+                "ipi": 0,
+                "unidade": "m³",
+                "categoria": "Combustíveis"
+            },
+            {
+                "ncm": "7308.90.00",
+                "descricao": "Construções e suas partes, de ferro ou aço",
+                "ipi": 5,
+                "unidade": "kg",
+                "categoria": "Construção"
+            },
+            {
+                "ncm": "2523.29.00",
+                "descricao": "Cimento Portland",
+                "ipi": 0,
+                "unidade": "kg",
+                "categoria": "Construção"
+            }
+        ]
+    }
+}

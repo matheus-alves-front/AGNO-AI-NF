@@ -1,0 +1,148 @@
+{
+    "cfop": {
+        "description": "Código Fiscal de Operações e Prestações",
+        "source": "Convênio SINIEF s/nº de 1970",
+        "grupos": {
+            "1": "Entradas ou aquisições de serviços do Estado",
+            "2": "Entradas ou aquisições de serviços de outros Estados",
+            "3": "Entradas ou aquisições de serviços do Exterior",
+            "5": "Saídas ou prestações de serviços para o Estado",
+            "6": "Saídas ou prestações de serviços para outros Estados",
+            "7": "Saídas ou prestações de serviços para o Exterior"
+        },
+        "items": [
+            {
+                "cfop": "5101",
+                "descricao": "Venda de produção do estabelecimento",
+                "tipo": "saida_interna",
+                "operacao": "Venda de mercadoria produzida pelo próprio estabelecimento"
+            },
+            {
+                "cfop": "5102",
+                "descricao": "Venda de mercadoria adquirida ou recebida de terceiros",
+                "tipo": "saida_interna",
+                "operacao": "Revenda de mercadorias"
+            },
+            {
+                "cfop": "5401",
+                "descricao": "Venda de produção do estabelecimento em operação com substituição tributária",
+                "tipo": "saida_interna_st",
+                "operacao": "Venda com ST - produto próprio"
+            },
+            {
+                "cfop": "5403",
+                "descricao": "Venda de mercadoria sujeita a ST, em operação entre contribuintes substitutos",
+                "tipo": "saida_interna_st",
+                "operacao": "Venda entre contribuintes substitutos"
+            },
+            {
+                "cfop": "5405",
+                "descricao": "Venda de mercadoria adquirida ou recebida de terceiros em operação com ST",
+                "tipo": "saida_interna_st",
+                "operacao": "Revenda com ST já retido anteriormente"
+            },
+            {
+                "cfop": "5910",
+                "descricao": "Remessa em bonificação, doação ou brinde",
+                "tipo": "saida_interna",
+                "operacao": "Brindes e doações"
+            },
+            {
+                "cfop": "5929",
+                "descricao": "Lançamento efetuado em decorrência de emissão de documento fiscal relativo a operação sujeita ao regime de ST",
+                "tipo": "saida_interna",
+                "operacao": "Ajuste de ICMS-ST"
+            },
+            {
+                "cfop": "6101",
+                "descricao": "Venda de produção do estabelecimento",
+                "tipo": "saida_interestadual",
+                "operacao": "Venda interestadual de produto próprio"
+            },
+            {
+                "cfop": "6102",
+                "descricao": "Venda de mercadoria adquirida ou recebida de terceiros",
+                "tipo": "saida_interestadual",
+                "operacao": "Revenda interestadual"
+            },
+            {
+                "cfop": "6401",
+                "descricao": "Venda de produção do estabelecimento em operação com substituição tributária",
+                "tipo": "saida_interestadual_st",
+                "operacao": "Venda interestadual com ST"
+            },
+            {
+                "cfop": "6403",
+                "descricao": "Venda de mercadoria sujeita a ST (entre contribuintes substitutos)",
+                "tipo": "saida_interestadual_st",
+                "operacao": "Venda interestadual entre substitutos"
+            },
+            {
+                "cfop": "6404",
+                "descricao": "Venda de mercadoria sujeita a ST, cujo ICMS já foi retido anteriormente",
+                "tipo": "saida_interestadual_st",
+                "operacao": "Revenda interestadual - ST retido anteriormente"
+            },
+            {
+                "cfop": "7101",
+                "descricao": "Venda de produção do estabelecimento",
+                "tipo": "exportacao",
+                "operacao": "Exportação de produto próprio"
+            },
+            {
+                "cfop": "7102",
+                "descricao": "Venda de mercadoria adquirida ou recebida de terceiros",
+                "tipo": "exportacao",
+                "operacao": "Exportação de mercadoria adquirida"
+            },
+            {
+                "cfop": "1101",
+                "descricao": "Compra para industrialização ou produção rural",
+                "tipo": "entrada_interna",
+                "operacao": "Compra de insumo para produção"
+            },
+            {
+                "cfop": "1102",
+                "descricao": "Compra para comercialização",
+                "tipo": "entrada_interna",
+                "operacao": "Compra para revenda"
+            },
+            {
+                "cfop": "1403",
+                "descricao": "Compra para comercialização em operação com ST",
+                "tipo": "entrada_interna_st",
+                "operacao": "Compra com ST para revenda"
+            },
+            {
+                "cfop": "2101",
+                "descricao": "Compra para industrialização ou produção rural",
+                "tipo": "entrada_interestadual",
+                "operacao": "Compra interestadual de insumo"
+            },
+            {
+                "cfop": "2102",
+                "descricao": "Compra para comercialização",
+                "tipo": "entrada_interestadual",
+                "operacao": "Compra interestadual para revenda"
+            },
+            {
+                "cfop": "2403",
+                "descricao": "Compra para comercialização em operação com ST",
+                "tipo": "entrada_interestadual_st",
+                "operacao": "Compra interestadual com ST"
+            },
+            {
+                "cfop": "3101",
+                "descricao": "Compra para industrialização ou produção rural",
+                "tipo": "importacao",
+                "operacao": "Importação de insumo para produção"
+            },
+            {
+                "cfop": "3102",
+                "descricao": "Compra para comercialização",
+                "tipo": "importacao",
+                "operacao": "Importação para revenda"
+            }
+        ]
+    }
+}

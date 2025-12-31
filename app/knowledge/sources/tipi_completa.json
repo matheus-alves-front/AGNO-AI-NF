@@ -1,0 +1,349 @@
+{
+  "tipi": {
+    "description": "Tabela de Incidência do IPI - Completa",
+    "source": "Receita Federal - TIPI 2022 (ADE 003-2025)",
+    "total_items": 68,
+    "items": [
+      {
+        "ncm": "22011000",
+        "descricao": "Águas minerais naturais",
+        "ipi": 0
+      },
+      {
+        "ncm": "22021000",
+        "descricao": "Águas adicionadas de açúcar (Refrigerantes)",
+        "ipi": 4
+      },
+      {
+        "ncm": "22029900",
+        "descricao": "Outras bebidas não alcoólicas",
+        "ipi": 4
+      },
+      {
+        "ncm": "22030000",
+        "descricao": "Cervejas de malte",
+        "ipi": 6
+      },
+      {
+        "ncm": "22041000",
+        "descricao": "Vinhos espumantes",
+        "ipi": 10
+      },
+      {
+        "ncm": "22042100",
+        "descricao": "Vinhos até 2 litros",
+        "ipi": 10
+      },
+      {
+        "ncm": "22051000",
+        "descricao": "Vermutes até 2 litros",
+        "ipi": 10
+      },
+      {
+        "ncm": "22060000",
+        "descricao": "Sidra, perada, hidromel",
+        "ipi": 10
+      },
+      {
+        "ncm": "22071000",
+        "descricao": "Álcool etílico não desnaturado",
+        "ipi": 30
+      },
+      {
+        "ncm": "22082000",
+        "descricao": "Aguardentes de vinho ou bagaço",
+        "ipi": 20
+      },
+      {
+        "ncm": "22083000",
+        "descricao": "Uísques",
+        "ipi": 30
+      },
+      {
+        "ncm": "22084000",
+        "descricao": "Rum e cachaça",
+        "ipi": 15
+      },
+      {
+        "ncm": "22085000",
+        "descricao": "Gin e genebra",
+        "ipi": 20
+      },
+      {
+        "ncm": "22086000",
+        "descricao": "Vodca",
+        "ipi": 20
+      },
+      {
+        "ncm": "22089000",
+        "descricao": "Outras bebidas espirituosas",
+        "ipi": 20
+      },
+      {
+        "ncm": "24011000",
+        "descricao": "Tabaco não destalado",
+        "ipi": 30
+      },
+      {
+        "ncm": "24022000",
+        "descricao": "Cigarros de tabaco",
+        "ipi": 300
+      },
+      {
+        "ncm": "24031100",
+        "descricao": "Tabaco para cachimbo",
+        "ipi": 30
+      },
+      {
+        "ncm": "33030000",
+        "descricao": "Perfumes e águas de toalete",
+        "ipi": 22
+      },
+      {
+        "ncm": "33041000",
+        "descricao": "Produtos de maquiagem para lábios",
+        "ipi": 7
+      },
+      {
+        "ncm": "33049100",
+        "descricao": "Pós para maquiagem",
+        "ipi": 7
+      },
+      {
+        "ncm": "33051000",
+        "descricao": "Xampus",
+        "ipi": 7
+      },
+      {
+        "ncm": "30049000",
+        "descricao": "Medicamentos",
+        "ipi": 0
+      },
+      {
+        "ncm": "30042000",
+        "descricao": "Medicamentos com antibióticos",
+        "ipi": 0
+      },
+      {
+        "ncm": "84713000",
+        "descricao": "Notebooks e laptops",
+        "ipi": 0
+      },
+      {
+        "ncm": "84714100",
+        "descricao": "Computadores desktop",
+        "ipi": 0
+      },
+      {
+        "ncm": "84714900",
+        "descricao": "Outros computadores",
+        "ipi": 0
+      },
+      {
+        "ncm": "84715000",
+        "descricao": "Unidades de processamento",
+        "ipi": 0
+      },
+      {
+        "ncm": "84716000",
+        "descricao": "Unidades de entrada/saída",
+        "ipi": 0
+      },
+      {
+        "ncm": "84717000",
+        "descricao": "Unidades de armazenamento",
+        "ipi": 0
+      },
+      {
+        "ncm": "85171200",
+        "descricao": "Telefones celulares (Smartphones)",
+        "ipi": 0
+      },
+      {
+        "ncm": "85171800",
+        "descricao": "Outros aparelhos telefônicos",
+        "ipi": 0
+      },
+      {
+        "ncm": "85176200",
+        "descricao": "Aparelhos de recepção, conversão",
+        "ipi": 0
+      },
+      {
+        "ncm": "85287200",
+        "descricao": "Televisores em cores",
+        "ipi": 5
+      },
+      {
+        "ncm": "85287100",
+        "descricao": "Televisores monocromáticos",
+        "ipi": 5
+      },
+      {
+        "ncm": "87032100",
+        "descricao": "Automóveis até 1000cc",
+        "ipi": 7
+      },
+      {
+        "ncm": "87032210",
+        "descricao": "Automóveis 1000cc a 1500cc",
+        "ipi": 11
+      },
+      {
+        "ncm": "87032290",
+        "descricao": "Automóveis 1500cc a 3000cc",
+        "ipi": 25
+      },
+      {
+        "ncm": "87032310",
+        "descricao": "Automóveis acima 3000cc",
+        "ipi": 25
+      },
+      {
+        "ncm": "87033200",
+        "descricao": "Veículos diesel 1500cc a 2500cc",
+        "ipi": 11
+      },
+      {
+        "ncm": "87033300",
+        "descricao": "Veículos diesel acima 2500cc",
+        "ipi": 25
+      },
+      {
+        "ncm": "87040000",
+        "descricao": "Caminhões para transporte de mercadorias",
+        "ipi": 5
+      },
+      {
+        "ncm": "87112000",
+        "descricao": "Motocicletas 50cc a 250cc",
+        "ipi": 8
+      },
+      {
+        "ncm": "87113000",
+        "descricao": "Motocicletas 250cc a 500cc",
+        "ipi": 12
+      },
+      {
+        "ncm": "87114000",
+        "descricao": "Motocicletas 500cc a 800cc",
+        "ipi": 17
+      },
+      {
+        "ncm": "87115000",
+        "descricao": "Motocicletas acima 800cc",
+        "ipi": 22
+      },
+      {
+        "ncm": "04011000",
+        "descricao": "Leite e creme de leite",
+        "ipi": 0
+      },
+      {
+        "ncm": "04021000",
+        "descricao": "Leite em pó",
+        "ipi": 0
+      },
+      {
+        "ncm": "04070000",
+        "descricao": "Ovos de aves",
+        "ipi": 0
+      },
+      {
+        "ncm": "16010000",
+        "descricao": "Embutidos e produtos de carne",
+        "ipi": 0
+      },
+      {
+        "ncm": "17011100",
+        "descricao": "Açúcar de cana bruto",
+        "ipi": 0
+      },
+      {
+        "ncm": "19053100",
+        "descricao": "Biscoitos e bolachas doces",
+        "ipi": 0
+      },
+      {
+        "ncm": "19059000",
+        "descricao": "Pães, bolos e produtos de padaria",
+        "ipi": 0
+      },
+      {
+        "ncm": "21069000",
+        "descricao": "Preparações alimentícias diversas",
+        "ipi": 0
+      },
+      {
+        "ncm": "25232900",
+        "descricao": "Cimento Portland",
+        "ipi": 0
+      },
+      {
+        "ncm": "68101100",
+        "descricao": "Blocos e tijolos de cimento",
+        "ipi": 5
+      },
+      {
+        "ncm": "69041000",
+        "descricao": "Tijolos de construção",
+        "ipi": 0
+      },
+      {
+        "ncm": "70031200",
+        "descricao": "Vidros planos armados",
+        "ipi": 5
+      },
+      {
+        "ncm": "70052100",
+        "descricao": "Vidros float",
+        "ipi": 5
+      },
+      {
+        "ncm": "61091000",
+        "descricao": "Camisetas de malha de algodão",
+        "ipi": 0
+      },
+      {
+        "ncm": "62034200",
+        "descricao": "Calças de algodão (masculino)",
+        "ipi": 0
+      },
+      {
+        "ncm": "62046200",
+        "descricao": "Calças de algodão (feminino)",
+        "ipi": 0
+      },
+      {
+        "ncm": "64039900",
+        "descricao": "Calçados de couro",
+        "ipi": 10
+      },
+      {
+        "ncm": "27101921",
+        "descricao": "Gasolina automotiva",
+        "ipi": 0
+      },
+      {
+        "ncm": "27101941",
+        "descricao": "Óleo diesel",
+        "ipi": 0
+      },
+      {
+        "ncm": "27111100",
+        "descricao": "Gás natural liquefeito (GNL)",
+        "ipi": 0
+      },
+      {
+        "ncm": "27111200",
+        "descricao": "Propano (GLP)",
+        "ipi": 0
+      },
+      {
+        "ncm": "27112100",
+        "descricao": "Gás natural (GN)",
+        "ipi": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,3262 @@
+{
+  "cfop": {
+    "description": "Código Fiscal de Operações e Prestações - Completo",
+    "source": "Convênio SINIEF s/nº de 1970 (atualizado)",
+    "total_items": 541,
+    "grupos": {
+      "2": "Entradas interestaduais",
+      "3": "Entradas do exterior",
+      "5": "Saídas internas",
+      "6": "Saídas interestaduais",
+      "7": "Saídas para exterior"
+    },
+    "items": [
+      {
+        "cfop": "1101",
+        "descricao": "Compra para industrialização",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1102",
+        "descricao": "Compra para comercialização",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1111",
+        "descricao": "Compra para industrialização de mercadoria em consignação",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1113",
+        "descricao": "Compra para comercialização de mercadoria em consignação",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1116",
+        "descricao": "Compra para industrialização originada de encomenda",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1117",
+        "descricao": "Compra para comercialização originada de encomenda",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1118",
+        "descricao": "Compra de mercadoria para comercialização pelo adquirente originário, entregue pelo vendedor remetente ao destinatário, em venda à ordem",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1120",
+        "descricao": "Compra para industrialização, em venda à ordem, já recebida do vendedor remetente",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1121",
+        "descricao": "Compra para comercialização, em venda à ordem, já recebida do vendedor remetente",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1122",
+        "descricao": "Compra para industrialização em que a mercadoria foi remetida pelo fornecedor ao industrializador sem transitar pelo estabelecimento adquirente",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1124",
+        "descricao": "Industrialização efetuada por outra empresa",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1125",
+        "descricao": "Industrialização efetuada por outra empresa quando a mercadoria remetida para utilização no processo de industrialização não transitou pelo estabelecimento adquirente da mercadoria",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1126",
+        "descricao": "Compra para utilização na prestação de serviço sujeita ao ICMS",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1128",
+        "descricao": "Compra para utilização na prestação de serviço sujeita ao ISSQN",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1151",
+        "descricao": "Transferência para industrialização",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1152",
+        "descricao": "Transferência para comercialização",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1153",
+        "descricao": "Transferência de energia elétrica",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1154",
+        "descricao": "Transferência para utilização na prestação de serviço",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1201",
+        "descricao": "Devolução de venda de produção do estabelecimento",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1202",
+        "descricao": "Devolução de venda de mercadoria adquirida ou recebida de terceiros",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1203",
+        "descricao": "Devolução de venda de produção do estabelecimento, destinada à Zona Franca de Manaus ou Áreas de Livre Comércio",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1204",
+        "descricao": "Devolução de venda de mercadoria adquirida ou recebida de terceiros, destinada à Zona Franca de Manaus ou Áreas de Livre Comércio",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1205",
+        "descricao": "Anulação de valor relativo à prestação de serviço de comunicação",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1206",
+        "descricao": "Anulação de valor relativo à prestação de serviço de transporte",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1207",
+        "descricao": "Anulação de valor relativo à venda de energia elétrica",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1208",
+        "descricao": "Devolução de produção do estabelecimento, remetida em transferência",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1209",
+        "descricao": "Devolução de mercadoria adquirida ou recebida de terceiros, remetida em transferência",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1251",
+        "descricao": "Compra de energia elétrica para distribuição ou comercialização",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1252",
+        "descricao": "Compra de energia elétrica por estabelecimento industrial",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1253",
+        "descricao": "Compra de energia elétrica por estabelecimento comercial",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1254",
+        "descricao": "Compra de energia elétrica por estabelecimento prestador de serviço de transporte",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1255",
+        "descricao": "Compra de energia elétrica por estabelecimento prestador de serviço de comunicação",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1256",
+        "descricao": "Compra de energia elétrica por estabelecimento de produtor rural",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1257",
+        "descricao": "Compra de energia elétrica para consumo por demanda contratada",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1301",
+        "descricao": "Aquisição de serviço de comunicação para execução de serviço da mesma natureza",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1302",
+        "descricao": "Aquisição de serviço de comunicação por estabelecimento industrial",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1303",
+        "descricao": "Aquisição de serviço de comunicação por estabelecimento comercial",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1304",
+        "descricao": "Aquisição de serviço de comunicação por estabelecimento de prestador de serviço de transporte",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1305",
+        "descricao": "Aquisição de serviço de comunicação por estabelecimento de geradora ou de distribuidora de energia elétrica",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1306",
+        "descricao": "Aquisição de serviço de comunicação por estabelecimento de produtor rural",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1351",
+        "descricao": "Aquisição de serviço de transporte para execução de serviço da mesma natureza",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1352",
+        "descricao": "Aquisição de serviço de transporte por estabelecimento industrial",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1353",
+        "descricao": "Aquisição de serviço de transporte por estabelecimento comercial",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1354",
+        "descricao": "Aquisição de serviço de transporte por estabelecimento de prestador de serviço de comunicação",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1355",
+        "descricao": "Aquisição de serviço de transporte por estabelecimento de geradora ou de distribuidora de energia elétrica",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1356",
+        "descricao": "Aquisição de serviço de transporte por estabelecimento de produtor rural",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1401",
+        "descricao": "Compra para industrialização ou produção rural em operação com mercadoria sujeita ao regime de substituição tributária",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1403",
+        "descricao": "Compra para comercialização em operação com mercadoria sujeita ao regime de substituição tributária",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1406",
+        "descricao": "Compra de bem para o ativo imobilizado cuja mercadoria está sujeita ao regime de substituição tributária",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1407",
+        "descricao": "Compra de mercadoria para uso ou consumo cuja mercadoria está sujeita ao regime de substituição tributária",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1408",
+        "descricao": "Transferência para industrialização ou produção rural em operação com mercadoria sujeita ao regime de substituição tributária",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1409",
+        "descricao": "Transferência para comercialização em operação com mercadoria sujeita ao regime de substituição tributária",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1410",
+        "descricao": "Devolução de venda de produção do estabelecimento em operação com produto sujeito ao regime de substituição tributária",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1411",
+        "descricao": "Devolução de venda de mercadoria adquirida ou recebida de terceiros em operação com mercadoria sujeita ao regime de substituição tributária",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1414",
+        "descricao": "Retorno de produção do estabelecimento, remetida para venda fora do estabelecimento em operação com produto sujeito ao regime de substituição tributária",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1415",
+        "descricao": "Retorno de mercadoria adquirida ou recebida de terceiros, remetida para venda fora do estabelecimento em operação com mercadoria sujeita ao regime de substituição tributária",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1451",
+        "descricao": "Retorno de animal do estabelecimento produtor",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1452",
+        "descricao": "Retorno de insumo não utilizado na produção",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1501",
+        "descricao": "Entrada de mercadoria recebida com fim específico de exportação",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1503",
+        "descricao": "Entrada decorrente de devolução de produto remetido com fim específico de exportação, de produção do estabelecimento",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1504",
+        "descricao": "Entrada decorrente de devolução de mercadoria remetida com fim específico de exportação, adquirida ou recebida de terceiros",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1505",
+        "descricao": "Entrada decorrente de devolução de mercadorias remetidas para formação de lote de exportação, de produtos industrializados ou produzidos pelo próprio estabelecimento",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1506",
+        "descricao": "Entrada decorrente de devolução de mercadorias, adquiridas ou recebidas de terceiros, remetidas para formação de lote de exportação",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1551",
+        "descricao": "Compra de bem para o ativo imobilizado",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1552",
+        "descricao": "Transferência de bem do ativo imobilizado",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1553",
+        "descricao": "Devolução de venda de bem do ativo imobilizado",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1554",
+        "descricao": "Retorno de bem do ativo imobilizado remetido para uso fora do estabelecimento",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1555",
+        "descricao": "Entrada de bem do ativo imobilizado de terceiro, remetido para uso no estabelecimento",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1556",
+        "descricao": "Compra de material para uso ou consumo",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1557",
+        "descricao": "Transferência de material para uso ou consumo",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1601",
+        "descricao": "Recebimento, por transferência, de crédito de ICMS",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1602",
+        "descricao": "Recebimento, por transferência, de saldo credor de ICMS de outro estabelecimento da mesma empresa, para compensação de saldo devedor de ICMS",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1603",
+        "descricao": "Ressarcimento de ICMS retido por substituição tributária",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1604",
+        "descricao": "Lançamento do crédito relativo à compra de bem para o ativo imobilizado",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1605",
+        "descricao": "Recebimento, por transferência, de saldo devedor de ICMS de outro estabelecimento da mesma empresa",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1651",
+        "descricao": "Compra de combustível ou lubrificante para industrialização subsequente",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1652",
+        "descricao": "Compra de combustível ou lubrificante para comercialização",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1653",
+        "descricao": "Compra de combustível ou lubrificante por consumidor ou usuário final",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1658",
+        "descricao": "Transferência de combustível e lubrificante para industrialização",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1659",
+        "descricao": "Transferência de combustível e lubrificante para comercialização",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1660",
+        "descricao": "Devolução de venda de combustível ou lubrificante destinado à industrialização subsequente",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1661",
+        "descricao": "Devolução de venda de combustível ou lubrificante destinado à comercialização",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1662",
+        "descricao": "Devolução de venda de combustível ou lubrificante destinado a consumidor ou usuário final",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1663",
+        "descricao": "Entrada de combustível ou lubrificante para armazenagem",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1664",
+        "descricao": "Retorno de combustível ou lubrificante remetido para armazenagem",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1901",
+        "descricao": "Entrada para industrialização por encomenda",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1902",
+        "descricao": "Retorno de mercadoria remetida para industrialização por encomenda",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1903",
+        "descricao": "Entrada de mercadoria remetida para industrialização e não aplicada no referido processo",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1904",
+        "descricao": "Retorno de remessa para venda fora do estabelecimento",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1905",
+        "descricao": "Entrada de mercadoria recebida para depósito em depósito fechado ou armazém geral",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1906",
+        "descricao": "Retorno de mercadoria remetida para depósito fechado ou armazém geral",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1907",
+        "descricao": "Retorno simbólico de mercadoria remetida para depósito fechado ou armazém geral",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1908",
+        "descricao": "Entrada de bem por conta de contrato de comodato",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1909",
+        "descricao": "Retorno de bem remetido por conta de contrato de comodato",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1910",
+        "descricao": "Entrada de bonificação, doação ou brinde",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1911",
+        "descricao": "Entrada de amostra grátis",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1912",
+        "descricao": "Entrada de mercadoria ou bem recebido para demonstração",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1913",
+        "descricao": "Retorno de mercadoria ou bem remetido para demonstração",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1914",
+        "descricao": "Retorno de mercadoria ou bem remetido para exposição ou feira",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1915",
+        "descricao": "Entrada de mercadoria ou bem recebido para conserto ou reparo",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1916",
+        "descricao": "Retorno de mercadoria ou bem remetido para conserto ou reparo",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1917",
+        "descricao": "Entrada de mercadoria recebida em consignação mercantil ou industrial",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1918",
+        "descricao": "Devolução de mercadoria remetida em consignação mercantil ou industrial",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1919",
+        "descricao": "Devolução simbólica de mercadoria vendida ou utilizada em processo industrial, remetida anteriormente em consignação mercantil ou industrial",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1920",
+        "descricao": "Entrada de vasilhame ou sacaria",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1921",
+        "descricao": "Retorno de vasilhame ou sacaria",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1922",
+        "descricao": "Lançamento efetuado a título de simples faturamento decorrente de compra para recebimento futuro",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1923",
+        "descricao": "Entrada de mercadoria recebida do vendedor remetente, em venda à ordem",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1924",
+        "descricao": "Entrada para industrialização por conta e ordem do adquirente da mercadoria, quando esta não transitar pelo estabelecimento do adquirente",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1925",
+        "descricao": "Retorno de mercadoria remetida para industrialização por conta e ordem do adquirente da mercadoria, quando esta não transitar pelo estabelecimento do adquirente",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1926",
+        "descricao": "Lançamento efetuado a título de reclassificação de mercadoria decorrente de formação de kit ou de sua desagregação",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1931",
+        "descricao": "Lançamento efetuado pelo tomador do serviço de transporte quando a responsabilidade de retenção do imposto for atribuída ao remetente ou alienante da mercadoria, pelo serviço de transporte realizado por transportador autônomo ou por transportador não inscrito na unidade da Federação onde iniciado o serviço",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1932",
+        "descricao": "Aquisição de serviço de transporte iniciado em unidade da Federação diversa daquela onde inscrito o prestador",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1933",
+        "descricao": "Aquisição de serviço tributado pelo ISSQN",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "1949",
+        "descricao": "Outra entrada de mercadoria ou prestação de serviço não especificada",
+        "tipo": "entrada_interna",
+        "grupo": "1"
+      },
+      {
+        "cfop": "2101",
+        "descricao": "Compra para industrialização",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "3101",
+        "descricao": "Compra para industrialização (importação)",
+        "tipo": "entrada_exterior",
+        "grupo": "3"
+      },
+      {
+        "cfop": "2102",
+        "descricao": "Compra para comercialização",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "3102",
+        "descricao": "Compra para comercialização (importação)",
+        "tipo": "entrada_exterior",
+        "grupo": "3"
+      },
+      {
+        "cfop": "2111",
+        "descricao": "Compra para industrialização de mercadoria em consignação",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2113",
+        "descricao": "Compra para comercialização de mercadoria em consignação",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2116",
+        "descricao": "Compra para industrialização originada de encomenda",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2117",
+        "descricao": "Compra para comercialização originada de encomenda",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2118",
+        "descricao": "Compra de mercadoria para comercialização pelo adquirente originário, entregue pelo vendedor remetente ao destinatário, em venda à ordem",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2120",
+        "descricao": "Compra para industrialização, em venda à ordem, já recebida do vendedor remetente",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2121",
+        "descricao": "Compra para comercialização, em venda à ordem, já recebida do vendedor remetente",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2122",
+        "descricao": "Compra para industrialização em que a mercadoria foi remetida pelo fornecedor ao industrializador sem transitar pelo estabelecimento adquirente",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2124",
+        "descricao": "Industrialização efetuada por outra empresa",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2125",
+        "descricao": "Industrialização efetuada por outra empresa quando a mercadoria remetida para utilização no processo de industrialização não transitou pelo estabelecimento adquirente da mercadoria",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2126",
+        "descricao": "Compra para utilização na prestação de serviço sujeita ao ICMS",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2128",
+        "descricao": "Compra para utilização na prestação de serviço sujeita ao ISSQN",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2151",
+        "descricao": "Transferência para industrialização",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2152",
+        "descricao": "Transferência para comercialização",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2153",
+        "descricao": "Transferência de energia elétrica",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2154",
+        "descricao": "Transferência para utilização na prestação de serviço",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2201",
+        "descricao": "Devolução de venda de produção do estabelecimento",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2202",
+        "descricao": "Devolução de venda de mercadoria adquirida ou recebida de terceiros",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2203",
+        "descricao": "Devolução de venda de produção do estabelecimento, destinada à Zona Franca de Manaus ou Áreas de Livre Comércio",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2204",
+        "descricao": "Devolução de venda de mercadoria adquirida ou recebida de terceiros, destinada à Zona Franca de Manaus ou Áreas de Livre Comércio",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2205",
+        "descricao": "Anulação de valor relativo à prestação de serviço de comunicação",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2206",
+        "descricao": "Anulação de valor relativo à prestação de serviço de transporte",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2207",
+        "descricao": "Anulação de valor relativo à venda de energia elétrica",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2208",
+        "descricao": "Devolução de produção do estabelecimento, remetida em transferência",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2209",
+        "descricao": "Devolução de mercadoria adquirida ou recebida de terceiros, remetida em transferência",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2251",
+        "descricao": "Compra de energia elétrica para distribuição ou comercialização",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2252",
+        "descricao": "Compra de energia elétrica por estabelecimento industrial",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2253",
+        "descricao": "Compra de energia elétrica por estabelecimento comercial",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2254",
+        "descricao": "Compra de energia elétrica por estabelecimento prestador de serviço de transporte",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2255",
+        "descricao": "Compra de energia elétrica por estabelecimento prestador de serviço de comunicação",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2256",
+        "descricao": "Compra de energia elétrica por estabelecimento de produtor rural",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2257",
+        "descricao": "Compra de energia elétrica para consumo por demanda contratada",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2301",
+        "descricao": "Aquisição de serviço de comunicação para execução de serviço da mesma natureza",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2302",
+        "descricao": "Aquisição de serviço de comunicação por estabelecimento industrial",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2303",
+        "descricao": "Aquisição de serviço de comunicação por estabelecimento comercial",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2304",
+        "descricao": "Aquisição de serviço de comunicação por estabelecimento de prestador de serviço de transporte",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2305",
+        "descricao": "Aquisição de serviço de comunicação por estabelecimento de geradora ou de distribuidora de energia elétrica",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2306",
+        "descricao": "Aquisição de serviço de comunicação por estabelecimento de produtor rural",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2351",
+        "descricao": "Aquisição de serviço de transporte para execução de serviço da mesma natureza",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2352",
+        "descricao": "Aquisição de serviço de transporte por estabelecimento industrial",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2353",
+        "descricao": "Aquisição de serviço de transporte por estabelecimento comercial",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2354",
+        "descricao": "Aquisição de serviço de transporte por estabelecimento de prestador de serviço de comunicação",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2355",
+        "descricao": "Aquisição de serviço de transporte por estabelecimento de geradora ou de distribuidora de energia elétrica",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2356",
+        "descricao": "Aquisição de serviço de transporte por estabelecimento de produtor rural",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2401",
+        "descricao": "Compra para industrialização ou produção rural em operação com mercadoria sujeita ao regime de substituição tributária",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2403",
+        "descricao": "Compra para comercialização em operação com mercadoria sujeita ao regime de substituição tributária",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2406",
+        "descricao": "Compra de bem para o ativo imobilizado cuja mercadoria está sujeita ao regime de substituição tributária",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2407",
+        "descricao": "Compra de mercadoria para uso ou consumo cuja mercadoria está sujeita ao regime de substituição tributária",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2408",
+        "descricao": "Transferência para industrialização ou produção rural em operação com mercadoria sujeita ao regime de substituição tributária",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2409",
+        "descricao": "Transferência para comercialização em operação com mercadoria sujeita ao regime de substituição tributária",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2410",
+        "descricao": "Devolução de venda de produção do estabelecimento em operação com produto sujeito ao regime de substituição tributária",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2411",
+        "descricao": "Devolução de venda de mercadoria adquirida ou recebida de terceiros em operação com mercadoria sujeita ao regime de substituição tributária",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2414",
+        "descricao": "Retorno de produção do estabelecimento, remetida para venda fora do estabelecimento em operação com produto sujeito ao regime de substituição tributária",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2415",
+        "descricao": "Retorno de mercadoria adquirida ou recebida de terceiros, remetida para venda fora do estabelecimento em operação com mercadoria sujeita ao regime de substituição tributária",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2451",
+        "descricao": "Retorno de animal do estabelecimento produtor",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2452",
+        "descricao": "Retorno de insumo não utilizado na produção",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2501",
+        "descricao": "Entrada de mercadoria recebida com fim específico de exportação",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2503",
+        "descricao": "Entrada decorrente de devolução de produto remetido com fim específico de exportação, de produção do estabelecimento",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2504",
+        "descricao": "Entrada decorrente de devolução de mercadoria remetida com fim específico de exportação, adquirida ou recebida de terceiros",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2505",
+        "descricao": "Entrada decorrente de devolução de mercadorias remetidas para formação de lote de exportação, de produtos industrializados ou produzidos pelo próprio estabelecimento",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2506",
+        "descricao": "Entrada decorrente de devolução de mercadorias, adquiridas ou recebidas de terceiros, remetidas para formação de lote de exportação",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2551",
+        "descricao": "Compra de bem para o ativo imobilizado",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "3551",
+        "descricao": "Compra de bem para o ativo imobilizado (importação)",
+        "tipo": "entrada_exterior",
+        "grupo": "3"
+      },
+      {
+        "cfop": "2552",
+        "descricao": "Transferência de bem do ativo imobilizado",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "3552",
+        "descricao": "Transferência de bem do ativo imobilizado (importação)",
+        "tipo": "entrada_exterior",
+        "grupo": "3"
+      },
+      {
+        "cfop": "2553",
+        "descricao": "Devolução de venda de bem do ativo imobilizado",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "3553",
+        "descricao": "Devolução de venda de bem do ativo imobilizado (importação)",
+        "tipo": "entrada_exterior",
+        "grupo": "3"
+      },
+      {
+        "cfop": "2554",
+        "descricao": "Retorno de bem do ativo imobilizado remetido para uso fora do estabelecimento",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "3554",
+        "descricao": "Retorno de bem do ativo imobilizado remetido para uso fora do estabelecimento (importação)",
+        "tipo": "entrada_exterior",
+        "grupo": "3"
+      },
+      {
+        "cfop": "2555",
+        "descricao": "Entrada de bem do ativo imobilizado de terceiro, remetido para uso no estabelecimento",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "3555",
+        "descricao": "Entrada de bem do ativo imobilizado de terceiro, remetido para uso no estabelecimento (importação)",
+        "tipo": "entrada_exterior",
+        "grupo": "3"
+      },
+      {
+        "cfop": "2556",
+        "descricao": "Compra de material para uso ou consumo",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "3556",
+        "descricao": "Compra de material para uso ou consumo (importação)",
+        "tipo": "entrada_exterior",
+        "grupo": "3"
+      },
+      {
+        "cfop": "2557",
+        "descricao": "Transferência de material para uso ou consumo",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "3557",
+        "descricao": "Transferência de material para uso ou consumo (importação)",
+        "tipo": "entrada_exterior",
+        "grupo": "3"
+      },
+      {
+        "cfop": "2601",
+        "descricao": "Recebimento, por transferência, de crédito de ICMS",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2602",
+        "descricao": "Recebimento, por transferência, de saldo credor de ICMS de outro estabelecimento da mesma empresa, para compensação de saldo devedor de ICMS",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2603",
+        "descricao": "Ressarcimento de ICMS retido por substituição tributária",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2604",
+        "descricao": "Lançamento do crédito relativo à compra de bem para o ativo imobilizado",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2605",
+        "descricao": "Recebimento, por transferência, de saldo devedor de ICMS de outro estabelecimento da mesma empresa",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2651",
+        "descricao": "Compra de combustível ou lubrificante para industrialização subsequente",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "3651",
+        "descricao": "Compra de combustível ou lubrificante para industrialização subsequente (importação)",
+        "tipo": "entrada_exterior",
+        "grupo": "3"
+      },
+      {
+        "cfop": "2652",
+        "descricao": "Compra de combustível ou lubrificante para comercialização",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "3652",
+        "descricao": "Compra de combustível ou lubrificante para comercialização (importação)",
+        "tipo": "entrada_exterior",
+        "grupo": "3"
+      },
+      {
+        "cfop": "2653",
+        "descricao": "Compra de combustível ou lubrificante por consumidor ou usuário final",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "3653",
+        "descricao": "Compra de combustível ou lubrificante por consumidor ou usuário final (importação)",
+        "tipo": "entrada_exterior",
+        "grupo": "3"
+      },
+      {
+        "cfop": "2658",
+        "descricao": "Transferência de combustível e lubrificante para industrialização",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "3658",
+        "descricao": "Transferência de combustível e lubrificante para industrialização (importação)",
+        "tipo": "entrada_exterior",
+        "grupo": "3"
+      },
+      {
+        "cfop": "2659",
+        "descricao": "Transferência de combustível e lubrificante para comercialização",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "3659",
+        "descricao": "Transferência de combustível e lubrificante para comercialização (importação)",
+        "tipo": "entrada_exterior",
+        "grupo": "3"
+      },
+      {
+        "cfop": "2660",
+        "descricao": "Devolução de venda de combustível ou lubrificante destinado à industrialização subsequente",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2661",
+        "descricao": "Devolução de venda de combustível ou lubrificante destinado à comercialização",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2662",
+        "descricao": "Devolução de venda de combustível ou lubrificante destinado a consumidor ou usuário final",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2663",
+        "descricao": "Entrada de combustível ou lubrificante para armazenagem",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2664",
+        "descricao": "Retorno de combustível ou lubrificante remetido para armazenagem",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2901",
+        "descricao": "Entrada para industrialização por encomenda",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2902",
+        "descricao": "Retorno de mercadoria remetida para industrialização por encomenda",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2903",
+        "descricao": "Entrada de mercadoria remetida para industrialização e não aplicada no referido processo",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2904",
+        "descricao": "Retorno de remessa para venda fora do estabelecimento",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2905",
+        "descricao": "Entrada de mercadoria recebida para depósito em depósito fechado ou armazém geral",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2906",
+        "descricao": "Retorno de mercadoria remetida para depósito fechado ou armazém geral",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2907",
+        "descricao": "Retorno simbólico de mercadoria remetida para depósito fechado ou armazém geral",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2908",
+        "descricao": "Entrada de bem por conta de contrato de comodato",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2909",
+        "descricao": "Retorno de bem remetido por conta de contrato de comodato",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2910",
+        "descricao": "Entrada de bonificação, doação ou brinde",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2911",
+        "descricao": "Entrada de amostra grátis",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2912",
+        "descricao": "Entrada de mercadoria ou bem recebido para demonstração",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2913",
+        "descricao": "Retorno de mercadoria ou bem remetido para demonstração",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2914",
+        "descricao": "Retorno de mercadoria ou bem remetido para exposição ou feira",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2915",
+        "descricao": "Entrada de mercadoria ou bem recebido para conserto ou reparo",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2916",
+        "descricao": "Retorno de mercadoria ou bem remetido para conserto ou reparo",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2917",
+        "descricao": "Entrada de mercadoria recebida em consignação mercantil ou industrial",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2918",
+        "descricao": "Devolução de mercadoria remetida em consignação mercantil ou industrial",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2919",
+        "descricao": "Devolução simbólica de mercadoria vendida ou utilizada em processo industrial, remetida anteriormente em consignação mercantil ou industrial",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2920",
+        "descricao": "Entrada de vasilhame ou sacaria",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2921",
+        "descricao": "Retorno de vasilhame ou sacaria",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2922",
+        "descricao": "Lançamento efetuado a título de simples faturamento decorrente de compra para recebimento futuro",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2923",
+        "descricao": "Entrada de mercadoria recebida do vendedor remetente, em venda à ordem",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2924",
+        "descricao": "Entrada para industrialização por conta e ordem do adquirente da mercadoria, quando esta não transitar pelo estabelecimento do adquirente",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2925",
+        "descricao": "Retorno de mercadoria remetida para industrialização por conta e ordem do adquirente da mercadoria, quando esta não transitar pelo estabelecimento do adquirente",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2926",
+        "descricao": "Lançamento efetuado a título de reclassificação de mercadoria decorrente de formação de kit ou de sua desagregação",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2931",
+        "descricao": "Lançamento efetuado pelo tomador do serviço de transporte quando a responsabilidade de retenção do imposto for atribuída ao remetente ou alienante da mercadoria, pelo serviço de transporte realizado por transportador autônomo ou por transportador não inscrito na unidade da Federação onde iniciado o serviço",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2932",
+        "descricao": "Aquisição de serviço de transporte iniciado em unidade da Federação diversa daquela onde inscrito o prestador",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2933",
+        "descricao": "Aquisição de serviço tributado pelo ISSQN",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "2949",
+        "descricao": "Outra entrada de mercadoria ou prestação de serviço não especificada",
+        "tipo": "entrada_interestadual",
+        "grupo": "2"
+      },
+      {
+        "cfop": "5101",
+        "descricao": "Venda de produção do estabelecimento",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6101",
+        "descricao": "Venda de produção do estabelecimento",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5102",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6102",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5103",
+        "descricao": "Venda de produção do estabelecimento, efetuada fora do estabelecimento",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6103",
+        "descricao": "Venda de produção do estabelecimento, efetuada fora do estabelecimento",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5104",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros, efetuada fora do estabelecimento",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6104",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros, efetuada fora do estabelecimento",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5105",
+        "descricao": "Venda de produção do estabelecimento que não deva por ele transitar",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6105",
+        "descricao": "Venda de produção do estabelecimento que não deva por ele transitar",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5106",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros, que não deva por ele transitar",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6106",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros, que não deva por ele transitar",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5109",
+        "descricao": "Venda de produção do estabelecimento, destinada à Zona Franca de Manaus ou Áreas de Livre Comércio",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6109",
+        "descricao": "Venda de produção do estabelecimento, destinada à Zona Franca de Manaus ou Áreas de Livre Comércio",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5110",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros, destinada à Zona Franca de Manaus ou Áreas de Livre Comércio",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6110",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros, destinada à Zona Franca de Manaus ou Áreas de Livre Comércio",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5111",
+        "descricao": "Venda de produção do estabelecimento remetida anteriormente em consignação industrial",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6111",
+        "descricao": "Venda de produção do estabelecimento remetida anteriormente em consignação industrial",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5112",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros remetida anteriormente em consignação industrial",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6112",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros remetida anteriormente em consignação industrial",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5113",
+        "descricao": "Venda de produção do estabelecimento remetida anteriormente em consignação mercantil",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6113",
+        "descricao": "Venda de produção do estabelecimento remetida anteriormente em consignação mercantil",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5114",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros remetida anteriormente em consignação mercantil",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6114",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros remetida anteriormente em consignação mercantil",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5115",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros, recebida anteriormente em consignação mercantil",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6115",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros, recebida anteriormente em consignação mercantil",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5116",
+        "descricao": "Venda de produção do estabelecimento originada de encomenda para entrega futura",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6116",
+        "descricao": "Venda de produção do estabelecimento originada de encomenda para entrega futura",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5117",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros, originada de encomenda para entrega futura",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6117",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros, originada de encomenda para entrega futura",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5118",
+        "descricao": "Venda de produção do estabelecimento entregue ao destinatário por conta e ordem do adquirente originário, em venda à ordem",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6118",
+        "descricao": "Venda de produção do estabelecimento entregue ao destinatário por conta e ordem do adquirente originário, em venda à ordem",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5119",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros entregue ao destinatário por conta e ordem do adquirente originário, em venda à ordem",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6119",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros entregue ao destinatário por conta e ordem do adquirente originário, em venda à ordem",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5120",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros entregue ao destinatário pelo vendedor remetente, em venda à ordem",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6120",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros entregue ao destinatário pelo vendedor remetente, em venda à ordem",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5122",
+        "descricao": "Venda de produção do estabelecimento remetida para industrialização, por conta e ordem do adquirente, sem transitar pelo estabelecimento do adquirente",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6122",
+        "descricao": "Venda de produção do estabelecimento remetida para industrialização, por conta e ordem do adquirente, sem transitar pelo estabelecimento do adquirente",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5123",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros remetida para industrialização, por conta e ordem do adquirente, sem transitar pelo estabelecimento do adquirente",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6123",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros remetida para industrialização, por conta e ordem do adquirente, sem transitar pelo estabelecimento do adquirente",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5124",
+        "descricao": "Industrialização efetuada para outra empresa",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6124",
+        "descricao": "Industrialização efetuada para outra empresa",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5125",
+        "descricao": "Industrialização efetuada para outra empresa quando a mercadoria recebida para utilização no processo de industrialização não transitar pelo estabelecimento adquirente da mercadoria",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6125",
+        "descricao": "Industrialização efetuada para outra empresa quando a mercadoria recebida para utilização no processo de industrialização não transitar pelo estabelecimento adquirente da mercadoria",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5151",
+        "descricao": "Transferência de produção do estabelecimento",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6151",
+        "descricao": "Transferência de produção do estabelecimento",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5152",
+        "descricao": "Transferência de mercadoria adquirida ou recebida de terceiros",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6152",
+        "descricao": "Transferência de mercadoria adquirida ou recebida de terceiros",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5153",
+        "descricao": "Transferência de energia elétrica",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6153",
+        "descricao": "Transferência de energia elétrica",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5155",
+        "descricao": "Transferência de produção do estabelecimento, que não deva por ele transitar",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6155",
+        "descricao": "Transferência de produção do estabelecimento, que não deva por ele transitar",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5156",
+        "descricao": "Transferência de mercadoria adquirida ou recebida de terceiros, que não deva por ele transitar",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6156",
+        "descricao": "Transferência de mercadoria adquirida ou recebida de terceiros, que não deva por ele transitar",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5201",
+        "descricao": "Devolução de compra para industrialização ou produção rural",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6201",
+        "descricao": "Devolução de compra para industrialização ou produção rural",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5202",
+        "descricao": "Devolução de compra para comercialização",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6202",
+        "descricao": "Devolução de compra para comercialização",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5205",
+        "descricao": "Anulação de valor relativo a aquisição de serviço de comunicação",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6205",
+        "descricao": "Anulação de valor relativo a aquisição de serviço de comunicação",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5206",
+        "descricao": "Anulação de valor relativo a aquisição de serviço de transporte",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6206",
+        "descricao": "Anulação de valor relativo a aquisição de serviço de transporte",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5207",
+        "descricao": "Anulação de valor relativo à compra de energia elétrica",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6207",
+        "descricao": "Anulação de valor relativo à compra de energia elétrica",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5208",
+        "descricao": "Devolução de mercadoria recebida em transferência para industrialização ou produção rural",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6208",
+        "descricao": "Devolução de mercadoria recebida em transferência para industrialização ou produção rural",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5209",
+        "descricao": "Devolução de mercadoria recebida em transferência para comercialização",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6209",
+        "descricao": "Devolução de mercadoria recebida em transferência para comercialização",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5210",
+        "descricao": "Devolução de compra para utilização na prestação de serviço",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6210",
+        "descricao": "Devolução de compra para utilização na prestação de serviço",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5251",
+        "descricao": "Venda de energia elétrica para distribuição ou comercialização",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6251",
+        "descricao": "Venda de energia elétrica para distribuição ou comercialização",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5252",
+        "descricao": "Venda de energia elétrica para estabelecimento industrial",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6252",
+        "descricao": "Venda de energia elétrica para estabelecimento industrial",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5253",
+        "descricao": "Venda de energia elétrica para estabelecimento comercial",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6253",
+        "descricao": "Venda de energia elétrica para estabelecimento comercial",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5254",
+        "descricao": "Venda de energia elétrica para estabelecimento prestador de serviço de transporte",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6254",
+        "descricao": "Venda de energia elétrica para estabelecimento prestador de serviço de transporte",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5255",
+        "descricao": "Venda de energia elétrica para estabelecimento prestador de serviço de comunicação",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6255",
+        "descricao": "Venda de energia elétrica para estabelecimento prestador de serviço de comunicação",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5256",
+        "descricao": "Venda de energia elétrica para estabelecimento de produtor rural",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6256",
+        "descricao": "Venda de energia elétrica para estabelecimento de produtor rural",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5257",
+        "descricao": "Venda de energia elétrica para consumo por demanda contratada",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6257",
+        "descricao": "Venda de energia elétrica para consumo por demanda contratada",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5258",
+        "descricao": "Venda de energia elétrica a não contribuinte",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6258",
+        "descricao": "Venda de energia elétrica a não contribuinte",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5301",
+        "descricao": "Prestação de serviço de comunicação para execução de serviço da mesma natureza",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6301",
+        "descricao": "Prestação de serviço de comunicação para execução de serviço da mesma natureza",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5302",
+        "descricao": "Prestação de serviço de comunicação a estabelecimento industrial",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6302",
+        "descricao": "Prestação de serviço de comunicação a estabelecimento industrial",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5303",
+        "descricao": "Prestação de serviço de comunicação a estabelecimento comercial",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6303",
+        "descricao": "Prestação de serviço de comunicação a estabelecimento comercial",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5304",
+        "descricao": "Prestação de serviço de comunicação a estabelecimento de prestador de serviço de transporte",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6304",
+        "descricao": "Prestação de serviço de comunicação a estabelecimento de prestador de serviço de transporte",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5305",
+        "descricao": "Prestação de serviço de comunicação a estabelecimento de geradora ou de distribuidora de energia elétrica",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6305",
+        "descricao": "Prestação de serviço de comunicação a estabelecimento de geradora ou de distribuidora de energia elétrica",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5306",
+        "descricao": "Prestação de serviço de comunicação a estabelecimento de produtor rural",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6306",
+        "descricao": "Prestação de serviço de comunicação a estabelecimento de produtor rural",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5307",
+        "descricao": "Prestação de serviço de comunicação a não contribuinte",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6307",
+        "descricao": "Prestação de serviço de comunicação a não contribuinte",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5351",
+        "descricao": "Prestação de serviço de transporte para execução de serviço da mesma natureza",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6351",
+        "descricao": "Prestação de serviço de transporte para execução de serviço da mesma natureza",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5352",
+        "descricao": "Prestação de serviço de transporte a estabelecimento industrial",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6352",
+        "descricao": "Prestação de serviço de transporte a estabelecimento industrial",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5353",
+        "descricao": "Prestação de serviço de transporte a estabelecimento comercial",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6353",
+        "descricao": "Prestação de serviço de transporte a estabelecimento comercial",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5354",
+        "descricao": "Prestação de serviço de transporte a estabelecimento de prestador de serviço de comunicação",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6354",
+        "descricao": "Prestação de serviço de transporte a estabelecimento de prestador de serviço de comunicação",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5355",
+        "descricao": "Prestação de serviço de transporte a estabelecimento de geradora ou de distribuidora de energia elétrica",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6355",
+        "descricao": "Prestação de serviço de transporte a estabelecimento de geradora ou de distribuidora de energia elétrica",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5356",
+        "descricao": "Prestação de serviço de transporte a estabelecimento de produtor rural",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6356",
+        "descricao": "Prestação de serviço de transporte a estabelecimento de produtor rural",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5357",
+        "descricao": "Prestação de serviço de transporte a não contribuinte",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6357",
+        "descricao": "Prestação de serviço de transporte a não contribuinte",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5359",
+        "descricao": "Prestação de serviço de transporte a contribuinte ou a não contribuinte quando a mercadoria transportada está dispensada de emissão de nota fiscal",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6359",
+        "descricao": "Prestação de serviço de transporte a contribuinte ou a não contribuinte quando a mercadoria transportada está dispensada de emissão de nota fiscal",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5401",
+        "descricao": "Venda de produção do estabelecimento em operação com produto sujeito ao regime de substituição tributária, na condição de contribuinte substituto",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6401",
+        "descricao": "Venda de produção do estabelecimento em operação com produto sujeito ao regime de substituição tributária, na condição de contribuinte substituto",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5402",
+        "descricao": "Venda de produção do estabelecimento de produto sujeito ao regime de substituição tributária, em operação entre contribuintes substitutos do mesmo produto",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6402",
+        "descricao": "Venda de produção do estabelecimento de produto sujeito ao regime de substituição tributária, em operação entre contribuintes substitutos do mesmo produto",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5403",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros em operação com mercadoria sujeita ao regime de substituição tributária, na condição de contribuinte substituto",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6403",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros em operação com mercadoria sujeita ao regime de substituição tributária, na condição de contribuinte substituto",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5405",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros em operação com mercadoria sujeita ao regime de substituição tributária, na condição de contribuinte substituído",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6405",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros em operação com mercadoria sujeita ao regime de substituição tributária, na condição de contribuinte substituído",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5408",
+        "descricao": "Transferência de produção do estabelecimento em operação com produto sujeito ao regime de substituição tributária",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6408",
+        "descricao": "Transferência de produção do estabelecimento em operação com produto sujeito ao regime de substituição tributária",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5409",
+        "descricao": "Transferência de mercadoria adquirida ou recebida de terceiros em operação com mercadoria sujeita ao regime de substituição tributária",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6409",
+        "descricao": "Transferência de mercadoria adquirida ou recebida de terceiros em operação com mercadoria sujeita ao regime de substituição tributária",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5410",
+        "descricao": "Devolução de compra para industrialização ou produção rural em operação com mercadoria sujeita ao regime de substituição tributária",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6410",
+        "descricao": "Devolução de compra para industrialização ou produção rural em operação com mercadoria sujeita ao regime de substituição tributária",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5411",
+        "descricao": "Devolução de compra para comercialização em operação com mercadoria sujeita ao regime de substituição tributária",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6411",
+        "descricao": "Devolução de compra para comercialização em operação com mercadoria sujeita ao regime de substituição tributária",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5412",
+        "descricao": "Devolução de bem do ativo imobilizado, em operação com mercadoria sujeita ao regime de substituição tributária",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6412",
+        "descricao": "Devolução de bem do ativo imobilizado, em operação com mercadoria sujeita ao regime de substituição tributária",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5413",
+        "descricao": "Devolução de mercadoria destinada ao uso ou consumo, em operação com mercadoria sujeita ao regime de substituição tributária",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6413",
+        "descricao": "Devolução de mercadoria destinada ao uso ou consumo, em operação com mercadoria sujeita ao regime de substituição tributária",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5414",
+        "descricao": "Remessa de produção do estabelecimento para venda fora do estabelecimento em operação com produto sujeito ao regime de substituição tributária",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6414",
+        "descricao": "Remessa de produção do estabelecimento para venda fora do estabelecimento em operação com produto sujeito ao regime de substituição tributária",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5415",
+        "descricao": "Remessa de mercadoria adquirida ou recebida de terceiros para venda fora do estabelecimento, em operação com mercadoria sujeita ao regime de substituição tributária",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6415",
+        "descricao": "Remessa de mercadoria adquirida ou recebida de terceiros para venda fora do estabelecimento, em operação com mercadoria sujeita ao regime de substituição tributária",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5501",
+        "descricao": "Remessa de produção do estabelecimento, com fim específico de exportação",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6501",
+        "descricao": "Remessa de produção do estabelecimento, com fim específico de exportação",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5502",
+        "descricao": "Remessa de mercadoria adquirida ou recebida de terceiros, com fim específico de exportação",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6502",
+        "descricao": "Remessa de mercadoria adquirida ou recebida de terceiros, com fim específico de exportação",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5503",
+        "descricao": "Devolução de mercadoria recebida com fim específico de exportação",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6503",
+        "descricao": "Devolução de mercadoria recebida com fim específico de exportação",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5504",
+        "descricao": "Remessa de mercadorias para formação de lote de exportação, de produtos industrializados ou produzidos pelo próprio estabelecimento",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6504",
+        "descricao": "Remessa de mercadorias para formação de lote de exportação, de produtos industrializados ou produzidos pelo próprio estabelecimento",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5505",
+        "descricao": "Remessa de mercadorias, adquiridas ou recebidas de terceiros, para formação de lote de exportação",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6505",
+        "descricao": "Remessa de mercadorias, adquiridas ou recebidas de terceiros, para formação de lote de exportação",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5551",
+        "descricao": "Venda de bem do ativo imobilizado",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6551",
+        "descricao": "Venda de bem do ativo imobilizado",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5552",
+        "descricao": "Transferência de bem do ativo imobilizado",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6552",
+        "descricao": "Transferência de bem do ativo imobilizado",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5553",
+        "descricao": "Devolução de compra de bem para o ativo imobilizado",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6553",
+        "descricao": "Devolução de compra de bem para o ativo imobilizado",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5554",
+        "descricao": "Remessa de bem do ativo imobilizado para uso fora do estabelecimento",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6554",
+        "descricao": "Remessa de bem do ativo imobilizado para uso fora do estabelecimento",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5555",
+        "descricao": "Devolução de bem do ativo imobilizado de terceiro, recebido para uso no estabelecimento",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6555",
+        "descricao": "Devolução de bem do ativo imobilizado de terceiro, recebido para uso no estabelecimento",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5556",
+        "descricao": "Devolução de compra de material de uso ou consumo",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6556",
+        "descricao": "Devolução de compra de material de uso ou consumo",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5557",
+        "descricao": "Transferência de material de uso ou consumo",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6557",
+        "descricao": "Transferência de material de uso ou consumo",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5601",
+        "descricao": "Transferência de crédito de ICMS acumulado",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6601",
+        "descricao": "Transferência de crédito de ICMS acumulado",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5602",
+        "descricao": "Transferência de saldo credor de ICMS para outro estabelecimento da mesma empresa, destinado à compensação de saldo devedor de ICMS",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6602",
+        "descricao": "Transferência de saldo credor de ICMS para outro estabelecimento da mesma empresa, destinado à compensação de saldo devedor de ICMS",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5603",
+        "descricao": "Ressarcimento de ICMS retido por substituição tributária",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6603",
+        "descricao": "Ressarcimento de ICMS retido por substituição tributária",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5605",
+        "descricao": "Transferência de saldo devedor de ICMS de outro estabelecimento da mesma empresa",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6605",
+        "descricao": "Transferência de saldo devedor de ICMS de outro estabelecimento da mesma empresa",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5606",
+        "descricao": "Utilização de saldo credor de ICMS para extinção por compensação de débitos fiscais",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6606",
+        "descricao": "Utilização de saldo credor de ICMS para extinção por compensação de débitos fiscais",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5651",
+        "descricao": "Venda de combustível ou lubrificante de produção do estabelecimento destinado à industrialização subsequente",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6651",
+        "descricao": "Venda de combustível ou lubrificante de produção do estabelecimento destinado à industrialização subsequente",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5652",
+        "descricao": "Venda de combustível ou lubrificante de produção do estabelecimento destinado à comercialização",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6652",
+        "descricao": "Venda de combustível ou lubrificante de produção do estabelecimento destinado à comercialização",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5653",
+        "descricao": "Venda de combustível ou lubrificante de produção do estabelecimento destinado a consumidor ou usuário final",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6653",
+        "descricao": "Venda de combustível ou lubrificante de produção do estabelecimento destinado a consumidor ou usuário final",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5654",
+        "descricao": "Venda de combustível ou lubrificante adquirido ou recebido de terceiros destinado à industrialização subsequente",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6654",
+        "descricao": "Venda de combustível ou lubrificante adquirido ou recebido de terceiros destinado à industrialização subsequente",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5655",
+        "descricao": "Venda de combustível ou lubrificante adquirido ou recebido de terceiros destinado à comercialização",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6655",
+        "descricao": "Venda de combustível ou lubrificante adquirido ou recebido de terceiros destinado à comercialização",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5656",
+        "descricao": "Venda de combustível ou lubrificante adquirido ou recebido de terceiros destinado a consumidor ou usuário final",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6656",
+        "descricao": "Venda de combustível ou lubrificante adquirido ou recebido de terceiros destinado a consumidor ou usuário final",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5657",
+        "descricao": "Remessa de combustível ou lubrificante adquirido ou recebido de terceiros para venda fora do estabelecimento",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6657",
+        "descricao": "Remessa de combustível ou lubrificante adquirido ou recebido de terceiros para venda fora do estabelecimento",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5658",
+        "descricao": "Transferência de combustível ou lubrificante de produção do estabelecimento",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6658",
+        "descricao": "Transferência de combustível ou lubrificante de produção do estabelecimento",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5659",
+        "descricao": "Transferência de combustível ou lubrificante adquirido ou recebido de terceiro",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6659",
+        "descricao": "Transferência de combustível ou lubrificante adquirido ou recebido de terceiro",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5660",
+        "descricao": "Devolução de compra de combustível ou lubrificante adquirido para industrialização subsequente",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6660",
+        "descricao": "Devolução de compra de combustível ou lubrificante adquirido para industrialização subsequente",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5661",
+        "descricao": "Devolução de compra de combustível ou lubrificante adquirido para comercialização",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6661",
+        "descricao": "Devolução de compra de combustível ou lubrificante adquirido para comercialização",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5662",
+        "descricao": "Devolução de compra de combustível ou lubrificante adquirido por consumidor ou usuário final",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6662",
+        "descricao": "Devolução de compra de combustível ou lubrificante adquirido por consumidor ou usuário final",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5663",
+        "descricao": "Remessa para armazenagem de combustível ou lubrificante",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6663",
+        "descricao": "Remessa para armazenagem de combustível ou lubrificante",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5664",
+        "descricao": "Retorno de combustível ou lubrificante recebido para armazenagem",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6664",
+        "descricao": "Retorno de combustível ou lubrificante recebido para armazenagem",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5665",
+        "descricao": "Retorno simbólico de combustível ou lubrificante recebido para armazenagem",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6665",
+        "descricao": "Retorno simbólico de combustível ou lubrificante recebido para armazenagem",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5666",
+        "descricao": "Remessa por conta e ordem de terceiros de combustível ou lubrificante recebido para armazenagem",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6666",
+        "descricao": "Remessa por conta e ordem de terceiros de combustível ou lubrificante recebido para armazenagem",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5667",
+        "descricao": "Venda de combustível ou lubrificante a consumidor ou usuário final estabelecido em outra unidade da Federação",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6667",
+        "descricao": "Venda de combustível ou lubrificante a consumidor ou usuário final estabelecido em outra unidade da Federação",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5901",
+        "descricao": "Remessa para industrialização por encomenda",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6901",
+        "descricao": "Remessa para industrialização por encomenda",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5902",
+        "descricao": "Retorno de mercadoria utilizada na industrialização por encomenda",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6902",
+        "descricao": "Retorno de mercadoria utilizada na industrialização por encomenda",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5903",
+        "descricao": "Retorno de mercadoria recebida para industrialização e não aplicada no referido processo",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6903",
+        "descricao": "Retorno de mercadoria recebida para industrialização e não aplicada no referido processo",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5904",
+        "descricao": "Remessa para venda fora do estabelecimento",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6904",
+        "descricao": "Remessa para venda fora do estabelecimento",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5905",
+        "descricao": "Remessa para depósito fechado ou armazém geral",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6905",
+        "descricao": "Remessa para depósito fechado ou armazém geral",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5906",
+        "descricao": "Retorno de mercadoria depositada em depósito fechado ou armazém geral",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6906",
+        "descricao": "Retorno de mercadoria depositada em depósito fechado ou armazém geral",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5907",
+        "descricao": "Retorno simbólico de mercadoria depositada em depósito fechado ou armazém geral",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6907",
+        "descricao": "Retorno simbólico de mercadoria depositada em depósito fechado ou armazém geral",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5908",
+        "descricao": "Remessa de bem por conta de contrato de comodato",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6908",
+        "descricao": "Remessa de bem por conta de contrato de comodato",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5909",
+        "descricao": "Retorno de bem recebido por conta de contrato de comodato",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6909",
+        "descricao": "Retorno de bem recebido por conta de contrato de comodato",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5910",
+        "descricao": "Remessa em bonificação, doação ou brinde",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6910",
+        "descricao": "Remessa em bonificação, doação ou brinde",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5911",
+        "descricao": "Remessa de amostra grátis",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6911",
+        "descricao": "Remessa de amostra grátis",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5912",
+        "descricao": "Remessa de mercadoria ou bem para demonstração",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6912",
+        "descricao": "Remessa de mercadoria ou bem para demonstração",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5913",
+        "descricao": "Retorno de mercadoria ou bem recebido para demonstração",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6913",
+        "descricao": "Retorno de mercadoria ou bem recebido para demonstração",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5914",
+        "descricao": "Remessa de mercadoria ou bem para exposição ou feira",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6914",
+        "descricao": "Remessa de mercadoria ou bem para exposição ou feira",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5915",
+        "descricao": "Remessa de mercadoria ou bem para conserto ou reparo",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6915",
+        "descricao": "Remessa de mercadoria ou bem para conserto ou reparo",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5916",
+        "descricao": "Retorno de mercadoria ou bem recebido para conserto ou reparo",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6916",
+        "descricao": "Retorno de mercadoria ou bem recebido para conserto ou reparo",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5917",
+        "descricao": "Remessa de mercadoria em consignação mercantil ou industrial",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6917",
+        "descricao": "Remessa de mercadoria em consignação mercantil ou industrial",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5918",
+        "descricao": "Devolução de mercadoria recebida em consignação mercantil ou industrial",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6918",
+        "descricao": "Devolução de mercadoria recebida em consignação mercantil ou industrial",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5919",
+        "descricao": "Devolução simbólica de mercadoria vendida ou utilizada em processo industrial, recebida anteriormente em consignação mercantil ou industrial",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6919",
+        "descricao": "Devolução simbólica de mercadoria vendida ou utilizada em processo industrial, recebida anteriormente em consignação mercantil ou industrial",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5920",
+        "descricao": "Remessa de vasilhame ou sacaria",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6920",
+        "descricao": "Remessa de vasilhame ou sacaria",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5921",
+        "descricao": "Devolução de vasilhame ou sacaria",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6921",
+        "descricao": "Devolução de vasilhame ou sacaria",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5922",
+        "descricao": "Lançamento efetuado a título de simples faturamento decorrente de venda para entrega futura",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6922",
+        "descricao": "Lançamento efetuado a título de simples faturamento decorrente de venda para entrega futura",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5923",
+        "descricao": "Remessa de mercadoria por conta e ordem de terceiros, em venda à ordem ou em operações com armazém geral ou depósito fechado",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6923",
+        "descricao": "Remessa de mercadoria por conta e ordem de terceiros, em venda à ordem ou em operações com armazém geral ou depósito fechado",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5924",
+        "descricao": "Remessa para industrialização por conta e ordem do adquirente da mercadoria, quando esta não transitar pelo estabelecimento do adquirente",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6924",
+        "descricao": "Remessa para industrialização por conta e ordem do adquirente da mercadoria, quando esta não transitar pelo estabelecimento do adquirente",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5925",
+        "descricao": "Retorno de mercadoria recebida para industrialização por conta e ordem do adquirente da mercadoria, quando aquela não transitar pelo estabelecimento do adquirente",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6925",
+        "descricao": "Retorno de mercadoria recebida para industrialização por conta e ordem do adquirente da mercadoria, quando aquela não transitar pelo estabelecimento do adquirente",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5926",
+        "descricao": "Lançamento efetuado a título de reclassificação de mercadoria decorrente de formação de kit ou de sua desagregação",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6926",
+        "descricao": "Lançamento efetuado a título de reclassificação de mercadoria decorrente de formação de kit ou de sua desagregação",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5927",
+        "descricao": "Lançamento efetuado a título de baixa de estoque decorrente de perda, roubo ou deterioração",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6927",
+        "descricao": "Lançamento efetuado a título de baixa de estoque decorrente de perda, roubo ou deterioração",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5928",
+        "descricao": "Lançamento efetuado a título de baixa de estoque decorrente do encerramento da atividade da empresa",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6928",
+        "descricao": "Lançamento efetuado a título de baixa de estoque decorrente do encerramento da atividade da empresa",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5929",
+        "descricao": "Lançamento efetuado em decorrência de emissão de documento fiscal relativo a operação ou prestação também registrada em equipamento Emissor de Cupom Fiscal - ECF",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6929",
+        "descricao": "Lançamento efetuado em decorrência de emissão de documento fiscal relativo a operação ou prestação também registrada em equipamento Emissor de Cupom Fiscal - ECF",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5931",
+        "descricao": "Lançamento efetuado em decorrência da responsabilidade de retenção do imposto por substituição tributária, atribuída ao remetente ou alienante da mercadoria, pelo serviço de transporte realizado por transportador autônomo ou por transportador não inscrito na unidade da Federação onde iniciado o serviço",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6931",
+        "descricao": "Lançamento efetuado em decorrência da responsabilidade de retenção do imposto por substituição tributária, atribuída ao remetente ou alienante da mercadoria, pelo serviço de transporte realizado por transportador autônomo ou por transportador não inscrito na unidade da Federação onde iniciado o serviço",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5932",
+        "descricao": "Prestação de serviço de transporte iniciada em unidade da Federação diversa daquela onde inscrito o prestador",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6932",
+        "descricao": "Prestação de serviço de transporte iniciada em unidade da Federação diversa daquela onde inscrito o prestador",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5933",
+        "descricao": "Prestação de serviço tributado pelo ISSQN",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6933",
+        "descricao": "Prestação de serviço tributado pelo ISSQN",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5934",
+        "descricao": "Remessa simbólica de mercadoria depositada em armazém geral ou depósito fechado",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6934",
+        "descricao": "Remessa simbólica de mercadoria depositada em armazém geral ou depósito fechado",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "5949",
+        "descricao": "Outra saída de mercadoria ou prestação de serviço não especificado",
+        "tipo": "saida_interna",
+        "grupo": "5"
+      },
+      {
+        "cfop": "6949",
+        "descricao": "Outra saída de mercadoria ou prestação de serviço não especificado",
+        "tipo": "saida_interestadual",
+        "grupo": "6"
+      },
+      {
+        "cfop": "7101",
+        "descricao": "Venda de produção do estabelecimento",
+        "tipo": "exportacao",
+        "grupo": "7"
+      },
+      {
+        "cfop": "7102",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros",
+        "tipo": "exportacao",
+        "grupo": "7"
+      },
+      {
+        "cfop": "7105",
+        "descricao": "Venda de produção do estabelecimento, que não deva por ele transitar",
+        "tipo": "exportacao",
+        "grupo": "7"
+      },
+      {
+        "cfop": "7106",
+        "descricao": "Venda de mercadoria adquirida ou recebida de terceiros, que não deva por ele transitar",
+        "tipo": "exportacao",
+        "grupo": "7"
+      },
+      {
+        "cfop": "7127",
+        "descricao": "Venda de produção do estabelecimento sob o regime de Drawback",
+        "tipo": "exportacao",
+        "grupo": "7"
+      },
+      {
+        "cfop": "7201",
+        "descricao": "Devolução de compra para industrialização ou produção rural",
+        "tipo": "exportacao",
+        "grupo": "7"
+      },
+      {
+        "cfop": "7202",
+        "descricao": "Devolução de compra para comercialização",
+        "tipo": "exportacao",
+        "grupo": "7"
+      },
+      {
+        "cfop": "7210",
+        "descricao": "Devolução de compra para utilização na prestação de serviço",
+        "tipo": "exportacao",
+        "grupo": "7"
+      },
+      {
+        "cfop": "7211",
+        "descricao": "Devolução de compras para industrialização sob o regime de Drawback",
+        "tipo": "exportacao",
+        "grupo": "7"
+      },
+      {
+        "cfop": "7251",
+        "descricao": "Venda de energia elétrica para o exterior",
+        "tipo": "exportacao",
+        "grupo": "7"
+      },
+      {
+        "cfop": "7301",
+        "descricao": "Prestação de serviço de comunicação para execução de serviço da mesma natureza",
+        "tipo": "exportacao",
+        "grupo": "7"
+      },
+      {
+        "cfop": "7358",
+        "descricao": "Prestação de serviço de transporte",
+        "tipo": "exportacao",
+        "grupo": "7"
+      },
+      {
+        "cfop": "7501",
+        "descricao": "Exportação de mercadorias recebidas com fim específico de exportação",
+        "tipo": "exportacao",
+        "grupo": "7"
+      },
+      {
+        "cfop": "7551",
+        "descricao": "Venda de bem do ativo imobilizado",
+        "tipo": "exportacao",
+        "grupo": "7"
+      },
+      {
+        "cfop": "7553",
+        "descricao": "Devolução de compra de bem para o ativo imobilizado",
+        "tipo": "exportacao",
+        "grupo": "7"
+      },
+      {
+        "cfop": "7556",
+        "descricao": "Devolução de compra de material de uso ou consumo",
+        "tipo": "exportacao",
+        "grupo": "7"
+      },
+      {
+        "cfop": "7651",
+        "descricao": "Venda de combustível ou lubrificante de produção do estabelecimento",
+        "tipo": "exportacao",
+        "grupo": "7"
+      },
+      {
+        "cfop": "7654",
+        "descricao": "Venda de combustível ou lubrificante adquiridos ou recebidos de terceiros",
+        "tipo": "exportacao",
+        "grupo": "7"
+      },
+      {
+        "cfop": "7667",
+        "descricao": "Venda de combustível ou lubrificante a consumidor ou usuário final",
+        "tipo": "exportacao",
+        "grupo": "7"
+      },
+      {
+        "cfop": "7930",
+        "descricao": "Lançamento efetuado a título de devolução de bem cuja entrada tenha ocorrido sob amparo de regime especial aduaneiro de admissão temporária",
+        "tipo": "exportacao",
+        "grupo": "7"
+      },
+      {
+        "cfop": "7949",
+        "descricao": "Outra saída de mercadoria ou prestação de serviço não especificado",
+        "tipo": "exportacao",
+        "grupo": "7"
+      }
+    ]
+  }
+}

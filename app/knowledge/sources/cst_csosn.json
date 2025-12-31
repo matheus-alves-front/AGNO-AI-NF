@@ -1,0 +1,193 @@
+{
+    "cst_csosn": {
+        "description": "Códigos de Situação Tributária do ICMS",
+        "source": "Convênio SINIEF s/nº de 1970 e LC 123/2006",
+        "cst": {
+            "description": "CST - Código de Situação Tributária (Regime Normal - CRT 3)",
+            "items": [
+                {
+                    "codigo": "00",
+                    "descricao": "Tributada integralmente",
+                    "situacao": "ICMS normal, sem benefício fiscal"
+                },
+                {
+                    "codigo": "10",
+                    "descricao": "Tributada e com cobrança do ICMS por substituição tributária",
+                    "situacao": "Operação com ST - o remetente é responsável pelo recolhimento"
+                },
+                {
+                    "codigo": "20",
+                    "descricao": "Com redução de base de cálculo",
+                    "situacao": "Base de cálculo reduzida por benefício fiscal"
+                },
+                {
+                    "codigo": "30",
+                    "descricao": "Isenta ou não tributada e com cobrança do ICMS por ST",
+                    "situacao": "Isenta para o remetente, mas com ST"
+                },
+                {
+                    "codigo": "40",
+                    "descricao": "Isenta",
+                    "situacao": "Operação isenta de ICMS"
+                },
+                {
+                    "codigo": "41",
+                    "descricao": "Não tributada",
+                    "situacao": "Operação fora do campo de incidência do ICMS"
+                },
+                {
+                    "codigo": "50",
+                    "descricao": "Suspensão",
+                    "situacao": "ICMS suspenso temporariamente"
+                },
+                {
+                    "codigo": "51",
+                    "descricao": "Diferimento",
+                    "situacao": "Pagamento do ICMS adiado para etapa posterior"
+                },
+                {
+                    "codigo": "60",
+                    "descricao": "ICMS cobrado anteriormente por substituição tributária",
+                    "situacao": "ICMS-ST já recolhido pelo substituto"
+                },
+                {
+                    "codigo": "70",
+                    "descricao": "Com redução de base de cálculo e cobrança do ICMS por ST",
+                    "situacao": "Redução + ST simultâneos"
+                },
+                {
+                    "codigo": "90",
+                    "descricao": "Outras",
+                    "situacao": "Situações não enquadradas nos demais códigos"
+                }
+            ]
+        },
+        "csosn": {
+            "description": "CSOSN - Código de Situação da Operação no Simples Nacional (CRT 1 ou 2)",
+            "items": [
+                {
+                    "codigo": "101",
+                    "descricao": "Tributada pelo Simples Nacional com permissão de crédito",
+                    "situacao": "Permite crédito de ICMS para o destinatário"
+                },
+                {
+                    "codigo": "102",
+                    "descricao": "Tributada pelo Simples Nacional sem permissão de crédito",
+                    "situacao": "Não permite crédito de ICMS"
+                },
+                {
+                    "codigo": "103",
+                    "descricao": "Isenção do ICMS no Simples Nacional para faixa de receita bruta",
+                    "situacao": "Isento por faixa de faturamento"
+                },
+                {
+                    "codigo": "201",
+                    "descricao": "Tributada pelo SN com permissão de crédito e com cobrança do ICMS por ST",
+                    "situacao": "SN + ST com crédito"
+                },
+                {
+                    "codigo": "202",
+                    "descricao": "Tributada pelo SN sem permissão de crédito e com cobrança do ICMS por ST",
+                    "situacao": "SN + ST sem crédito"
+                },
+                {
+                    "codigo": "203",
+                    "descricao": "Isenção do ICMS no SN para faixa de receita bruta e com cobrança do ICMS por ST",
+                    "situacao": "Isento SN + ST"
+                },
+                {
+                    "codigo": "300",
+                    "descricao": "Imune",
+                    "situacao": "Operação imune de ICMS (ex: exportação)"
+                },
+                {
+                    "codigo": "400",
+                    "descricao": "Não tributada pelo Simples Nacional",
+                    "situacao": "Fora do campo de incidência"
+                },
+                {
+                    "codigo": "500",
+                    "descricao": "ICMS cobrado anteriormente por substituição tributária ou por antecipação",
+                    "situacao": "ST já recolhido"
+                },
+                {
+                    "codigo": "900",
+                    "descricao": "Outros",
+                    "situacao": "Situações não enquadradas"
+                }
+            ]
+        },
+        "origem": {
+            "description": "Origem da mercadoria (1º dígito do CST)",
+            "items": [
+                {
+                    "codigo": "0",
+                    "descricao": "Nacional, exceto as indicadas nos códigos 3, 4, 5 e 8",
+                    "icms_interestadual": "7% ou 12% conforme UF destino"
+                },
+                {
+                    "codigo": "1",
+                    "descricao": "Estrangeira - Importação direta, exceto a indicada no código 6",
+                    "icms_interestadual": "4% (Resolução SF 13/2012)"
+                },
+                {
+                    "codigo": "2",
+                    "descricao": "Estrangeira - Adquirida no mercado interno, exceto a indicada no código 7",
+                    "icms_interestadual": "4% (Resolução SF 13/2012)"
+                },
+                {
+                    "codigo": "3",
+                    "descricao": "Nacional, mercadoria ou bem com Conteúdo de Importação superior a 40% e inferior a 70%",
+                    "icms_interestadual": "4% (Resolução SF 13/2012)"
+                },
+                {
+                    "codigo": "4",
+                    "descricao": "Nacional, produção em conformidade com PPB (Processos Produtivos Básicos)",
+                    "icms_interestadual": "7% ou 12% conforme UF destino"
+                },
+                {
+                    "codigo": "5",
+                    "descricao": "Nacional, mercadoria ou bem com Conteúdo de Importação inferior ou igual a 40%",
+                    "icms_interestadual": "7% ou 12% conforme UF destino"
+                },
+                {
+                    "codigo": "6",
+                    "descricao": "Estrangeira - Importação direta, sem similar nacional, constante em lista CAMEX",
+                    "icms_interestadual": "4% (Resolução SF 13/2012)"
+                },
+                {
+                    "codigo": "7",
+                    "descricao": "Estrangeira - Adquirida no mercado interno, sem similar nacional, constante em lista CAMEX",
+                    "icms_interestadual": "4% (Resolução SF 13/2012)"
+                },
+                {
+                    "codigo": "8",
+                    "descricao": "Nacional, mercadoria ou bem com Conteúdo de Importação superior a 70%",
+                    "icms_interestadual": "4% (Resolução SF 13/2012)"
+                }
+            ]
+        },
+        "regras_validacao": [
+            {
+                "regra": "CRT 1 ou 2 deve usar CSOSN, não CST",
+                "severidade": "high",
+                "referencia": "LC 123/2006, Art. 18"
+            },
+            {
+                "regra": "CRT 3 deve usar CST, não CSOSN",
+                "severidade": "high",
+                "referencia": "Convênio SINIEF s/nº"
+            },
+            {
+                "regra": "Origem 1, 2, 3, 6, 7 ou 8 em operação interestadual deve ter alíquota 4%",
+                "severidade": "critical",
+                "referencia": "Resolução SF nº 13/2012"
+            },
+            {
+                "regra": "CST 60 só pode ser usado se existir recolhimento anterior de ICMS-ST",
+                "severidade": "high",
+                "referencia": "Art. 264 do RICMS"
+            }
+        ]
+    }
+}
