@@ -12,10 +12,18 @@ from contextlib import asynccontextmanager
 from dotenv import load_dotenv
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 
 from app.agents.auditor import auditor_agent, audit_nfe_sync
 from app.tools.nfe_parser import NfeParser, NFELIB_AVAILABLE
 from app.models.report_schema import AuditResult, BatchAuditResult
+
+# TTS Service (opcional)
+try:
+    from app.tools.tts_service import TTSService
+    TTS_AVAILABLE = bool(os.getenv("ELEVEN_LABS_API_KEY"))
+except ImportError:
+    TTS_AVAILABLE = False
 
 
 # Carrega variáveis de ambiente
@@ -28,6 +36,7 @@ async def lifespan(app: FastAPI):
     # Startup
     print("🚀 Fiscal Agent iniciando...")
     print(f"   nfelib disponível: {NFELIB_AVAILABLE}")
+    print(f"   ElevenLabs TTS disponível: {TTS_AVAILABLE}")
     yield
     # Shutdown
     print("👋 Fiscal Agent finalizando...")
@@ -229,6 +238,71 @@ async def audit_with_pdf(file: UploadFile = File(...)):
             status_code=500,
             detail=f"Erro ao gerar PDF: {str(e)}"
         )
+
+
+@app.post("/audit/audio")
+async def audit_with_audio(file: UploadFile = File(...)):
+    """
+    Audita uma NFe e retorna o resultado com URL do áudio narrado.
+    
+    Gera um áudio MP3 via ElevenLabs com o resumo da auditoria.
+    """
+    if not file.filename.endswith('.xml'):
+        raise HTTPException(
+            status_code=400,
+            detail="Apenas arquivos XML são aceitos"
+        )
+    
+    if not NFELIB_AVAILABLE:
+        raise HTTPException(
+            status_code=503,
+            detail="nfelib não está instalada no servidor"
+        )
+    
+    if not TTS_AVAILABLE:
+        raise HTTPException(
+            status_code=503,
+            detail="ElevenLabs TTS não configurado. Defina ELEVEN_LABS_API_KEY"
+        )
+    
+    try:
+        # Lê e parseia NFe
+        content = await file.read()
+        xml_content = content.decode('utf-8')
+        
+        parser = NfeParser()
+        nfe_data = parser.parse_from_string(xml_content)
+        
+        # Executa auditoria
+        result = audit_nfe_sync(nfe_data)
+        
+        # Gera áudio do resumo
+        tts = TTSService()
+        audio_filename = f"audit_{result.nfe_access_key[-8:]}.mp3"
+        audio_path = tts.generate_audio(
+            text=result.summary or "Auditoria concluída.",
+            filename=audio_filename
+        )
+        
+        # Retorna resultado + URL do áudio
+        return {
+            "audit": result.model_dump(),
+            "audio_url": f"/audio/{audio_filename}",
+            "audio_path": audio_path,
+        }
+        
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Erro ao processar NFe com áudio: {str(e)}"
+        )
+
+
+# Monta diretório de áudios como arquivos estáticos
+from pathlib import Path
+audio_dir = Path("./storage/audio")
+audio_dir.mkdir(parents=True, exist_ok=True)
+app.mount("/audio", StaticFiles(directory=str(audio_dir)), name="audio")
 
 
 if __name__ == "__main__":

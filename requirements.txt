@@ -31,6 +31,9 @@ fpdf2>=2.7.0
 # Async Processing
 httpx>=0.25.0
 
+# Text-to-Speech (ElevenLabs)
+elevenlabs>=1.0.0
+
 # Environment Variables
 python-dotenv>=1.0.0
 

@@ -5,11 +5,13 @@ Versão completa com:
 - Base de conhecimento RAG (TIPI, CFOP, CST)
 - Tool para parsear XML de NFe
 - Integração com AgentOS Control Plane
+- Text-to-Speech via ElevenLabs
 """
 
 from dotenv import load_dotenv
 load_dotenv()
 
+import os
 import json
 from typing import Optional
 
@@ -18,6 +20,13 @@ from agno.models.google import Gemini
 from agno.db.sqlite import AsyncSqliteDb
 from agno.os import AgentOS
 from agno.tools import tool
+
+# ElevenLabs TTS (opcional)
+try:
+    from agno.tools.eleven_labs import ElevenLabsTools
+    ELEVENLABS_AVAILABLE = bool(os.getenv("ELEVEN_LABS_API_KEY"))
+except ImportError:
+    ELEVENLABS_AVAILABLE = False
 
 
 # ==================== TOOLS ====================
@@ -187,18 +196,41 @@ FORMATO DE RESPOSTA:
 - Sugestão de correção
 - Referência legal
 
-Seja preciso e use as tools para validar suas análises."""
+Seja preciso e use as tools para validar suas análises.
+
+AUDIO: Você tem acesso à ferramenta text_to_speech para gerar áudio.
+Sempre que terminar uma análise, gere um áudio resumindo os principais pontos."""
+
+
+# ==================== ELEVENLABS TTS ====================
+
+elevenlabs_tools = None
+if ELEVENLABS_AVAILABLE:
+    elevenlabs_tools = ElevenLabsTools(
+        voice_id="JBFqnCBsd6RMkjVDRZzb",  # George - voz masculina clara
+        model_id="eleven_multilingual_v2",  # Suporta português
+        output_format="mp3_44100_64",
+        target_directory="./storage/audio",
+        enable_text_to_speech=True,
+        enable_get_voices=True,
+        enable_generate_sound_effect=False,  # Não necessário para auditoria
+    )
 
 
 # ==================== AGENTE ====================
+
+# Lista de tools base
+base_tools = [buscar_ncm, buscar_cfop, buscar_cst, validar_icms_interestadual]
+if elevenlabs_tools:
+    base_tools.append(elevenlabs_tools)
 
 auditor_agent = Agent(
     name="AuditorFiscal",
     model=Gemini(id="gemini-2.0-flash"),
     db=AsyncSqliteDb(db_file="fiscal_agent.db"),
-    description="Auditor tributário com acesso a base de conhecimento fiscal (TIPI, CFOP, CST). Analisa NFes e identifica inconsistências.",
+    description="Auditor tributário com acesso a base de conhecimento fiscal (TIPI, CFOP, CST) e geração de áudio. Analisa NFes e identifica inconsistências.",
     instructions=[AUDITOR_SYSTEM_PROMPT],
-    tools=[buscar_ncm, buscar_cfop, buscar_cst, validar_icms_interestadual],
+    tools=base_tools,
     markdown=True,
 )
 
