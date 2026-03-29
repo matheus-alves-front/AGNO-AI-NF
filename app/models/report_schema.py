@@ -100,6 +100,22 @@ class NfeMetadata(BaseModel):
     valor_total: float | None = Field(None, description="Valor total da nota")
 
 
+class CorrectionPatch(BaseModel):
+    """Sugestão estruturada de correção para evolução futura do produto."""
+
+    item_index: int = Field(..., description="Número do item impactado", ge=1)
+    field_name: str = Field(..., description="Nome lógico do campo a corrigir")
+    field_path: str = Field(..., description="Caminho semântico do campo no payload da NFe")
+    current_value: str | None = Field(None, description="Valor atual encontrado")
+    suggested_value: str = Field(..., description="Valor sugerido para correção")
+    reason: str = Field(..., description="Motivo da correção")
+    legal_reference: str | None = Field(None, description="Base legal associada")
+    can_autocorrect: bool = Field(
+        default=False,
+        description="Indica se a correção pode ser automatizada com segurança em etapas futuras",
+    )
+
+
 class AuditResult(BaseModel):
     """
     Resultado completo da auditoria de uma NFe.
@@ -138,6 +154,11 @@ class AuditResult(BaseModel):
     inconsistencies: list[TaxInconsistency] = Field(
         default_factory=list,
         description="Lista de inconsistências encontradas"
+    )
+
+    correction_patches: list[CorrectionPatch] = Field(
+        default_factory=list,
+        description="Sugestões estruturadas de correção para evolução futura do produto",
     )
     
     summary: str = Field(

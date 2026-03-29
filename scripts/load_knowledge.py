@@ -4,7 +4,7 @@ Load Knowledge - Script principal para carregar TODOS os dados fiscais
 Este script:
 1. Executa download_tipi.py (NCMs completos)
 2. Executa download_cfop.py (CFOPs completos)
-3. Carrega todos os JSONs no PgVector com embeddings Gemini
+3. Carrega todos os JSONs no PgVector com embeddings do provider configurado
 
 Uso:
     python scripts/load_knowledge.py
@@ -16,6 +16,11 @@ import sys
 import subprocess
 from pathlib import Path
 
+ROOT_DIR = Path(__file__).resolve().parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
+from app.config.llm_provider import build_embedder, get_provider_config
 from dotenv import load_dotenv
 import psycopg2
 from psycopg2.extras import Json
@@ -27,26 +32,21 @@ DATABASE_URL = os.getenv(
     "postgresql://fiscal_user:fiscal_pass@localhost:5432/fiscal_agent"
 )
 
-SOURCES_DIR = Path(__file__).parent.parent / "app" / "knowledge" / "sources"
-SCRIPTS_DIR = Path(__file__).parent
+SOURCES_DIR = ROOT_DIR / "app" / "knowledge" / "sources"
+SCRIPTS_DIR = ROOT_DIR / "scripts"
 
 
-def get_gemini_embedding(text: str) -> list[float]:
-    """Gera embedding usando Gemini."""
-    import google.generativeai as genai
-    
-    api_key = os.getenv("GOOGLE_API_KEY")
-    if not api_key:
-        raise ValueError("GOOGLE_API_KEY não configurada no .env")
-    
-    genai.configure(api_key=api_key)
-    
-    result = genai.embed_content(
-        model="models/text-embedding-004",
-        content=text[:8000],  # Limita tamanho
-        task_type="retrieval_document",
-    )
-    return result['embedding']
+def get_document_embedding(text: str) -> list[float]:
+    """Gera embedding usando o provider configurado."""
+    config = get_provider_config()
+    embedder = build_embedder(task_type="RETRIEVAL_DOCUMENT")
+    embedding = embedder.get_embedding(text[:8000])
+    if len(embedding) != config.embedding_dimensions:
+        raise ValueError(
+            f"Embedding com dimensão inválida para provider '{config.provider}': "
+            f"esperado={config.embedding_dimensions}, recebido={len(embedding)}"
+        )
+    return embedding
 
 
 def download_data():
@@ -104,7 +104,7 @@ def load_json_file(conn, filepath: Path, doc_type: str) -> int:
                 metadata = {"type": doc_type}
             
             try:
-                embedding = get_gemini_embedding(content)
+                embedding = get_document_embedding(content)
                 
                 cur.execute(
                     """
@@ -143,7 +143,7 @@ def load_cst_csosn(conn, filepath: Path) -> int:
         for item in cst_data.get("cst", {}).get("items", []):
             content = f"CST {item['codigo']}: {item['descricao']}. Situação: {item['situacao']}. Regime: Normal (CRT 3)"
             try:
-                embedding = get_gemini_embedding(content)
+                embedding = get_document_embedding(content)
                 cur.execute(
                     "INSERT INTO tax_knowledge (content, metadata, embedding) VALUES (%s, %s, %s)",
                     (content, Json({"type": "cst", "codigo": item['codigo']}), embedding)
@@ -156,7 +156,7 @@ def load_cst_csosn(conn, filepath: Path) -> int:
         for item in cst_data.get("csosn", {}).get("items", []):
             content = f"CSOSN {item['codigo']}: {item['descricao']}. Situação: {item['situacao']}. Regime: Simples Nacional (CRT 1 ou 2)"
             try:
-                embedding = get_gemini_embedding(content)
+                embedding = get_document_embedding(content)
                 cur.execute(
                     "INSERT INTO tax_knowledge (content, metadata, embedding) VALUES (%s, %s, %s)",
                     (content, Json({"type": "csosn", "codigo": item['codigo']}), embedding)
@@ -169,7 +169,7 @@ def load_cst_csosn(conn, filepath: Path) -> int:
         for item in cst_data.get("origem", {}).get("items", []):
             content = f"Origem {item['codigo']}: {item['descricao']}. ICMS Interestadual: {item['icms_interestadual']}"
             try:
-                embedding = get_gemini_embedding(content)
+                embedding = get_document_embedding(content)
                 cur.execute(
                     "INSERT INTO tax_knowledge (content, metadata, embedding) VALUES (%s, %s, %s)",
                     (content, Json({"type": "origem", "codigo": item['codigo']}), embedding)
@@ -182,7 +182,7 @@ def load_cst_csosn(conn, filepath: Path) -> int:
         for regra in cst_data.get("regras_validacao", []):
             content = f"REGRA: {regra['regra']}. Severidade: {regra['severidade']}. Referência: {regra['referencia']}"
             try:
-                embedding = get_gemini_embedding(content)
+                embedding = get_document_embedding(content)
                 cur.execute(
                     "INSERT INTO tax_knowledge (content, metadata, embedding) VALUES (%s, %s, %s)",
                     (content, Json({"type": "regra", "severidade": regra['severidade']}), embedding)
@@ -209,11 +209,15 @@ def main():
     print("🚀 CARREGAMENTO DE BASE DE CONHECIMENTO FISCAL")
     print("=" * 60)
     
-    # Verifica API key
-    if not os.getenv("GOOGLE_API_KEY"):
-        print("❌ GOOGLE_API_KEY não está configurada!")
-        print("   Configure no arquivo .env")
+    try:
+        config = get_provider_config()
+    except Exception as e:
+        print(f"❌ Configuração de provider inválida: {e}")
         sys.exit(1)
+
+    print(f"🧠 Provider ativo: {config.provider}")
+    print(f"🧠 Modelo de embedding: {config.embedding_model_id}")
+    print(f"🧠 Dimensão esperada: {config.embedding_dimensions}")
     
     # Pergunta se deve baixar dados
     resp = input("\nBaixar dados atualizados? (S/n): ").strip().lower()

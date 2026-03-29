@@ -6,8 +6,8 @@ para reduzir falsos positivos e validar as sugestões.
 """
 
 from agno.agent import Agent
-from agno.models.google import Gemini
 
+from app.config.llm_provider import build_chat_model
 from app.models.report_schema import AuditResult
 
 
@@ -45,7 +45,7 @@ IMPORTANTE:
 
 
 def create_reviewer_agent(
-    model_id: str = "gemini-2.0-flash",
+    model_id: str | None = None,
     temperature: float = 0.0,
     debug: bool = False
 ) -> Agent:
@@ -53,7 +53,7 @@ def create_reviewer_agent(
     Cria o agente revisor.
     
     Args:
-        model_id: ID do modelo Gemini
+        model_id: Override opcional do modelo configurado por provider
         temperature: Usar 0.0 para máxima consistência
         debug: Mostrar tool calls
         
@@ -63,16 +63,14 @@ def create_reviewer_agent(
     
     agent = Agent(
         name="ReviewerFiscal",
-        model=Gemini(
-            id=model_id,
-            temperature=temperature,
-        ),
+        model=build_chat_model(model_id=model_id, temperature=temperature),
         description=(
             "Revisor tributário que valida resultados de auditoria, "
             "removendo falsos positivos e validando sugestões de correção."
         ),
         instructions=[REVIEWER_SYSTEM_PROMPT],
-        response_model=AuditResult,
+        output_schema=AuditResult,
+        structured_outputs=True,
         show_tool_calls=debug,
         markdown=True,
     )

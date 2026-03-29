@@ -26,5 +26,5 @@ EXPOSE 8000
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1
 
-# Run the application
-CMD ["python", "-m", "app.main"]
+# Run the AgentOS runtime
+CMD ["python", "my_os.py"]

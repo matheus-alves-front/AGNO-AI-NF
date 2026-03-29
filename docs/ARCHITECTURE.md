@@ -1,208 +1,141 @@
-# Architecture Guidelines: Fiscal Agent MVP
+# Architecture Guidelines: Fiscal Agent
 
-## 1. Tech Stack & Libraries
+## Visão geral
 
-| Componente | Tecnologia | Versão | Propósito |
-|------------|------------|--------|-----------|
-| Framework | Agno | v1.0+ | Orquestração de agentes |
-| Runtime | AgentOS | - | Serving com FastAPI automático |
-| Parsing | `nfelib` | - | Bindings oficiais NFe (não usar BeautifulSoup/Regex) |
-| Database | PostgreSQL | 16+ | Storage principal |
-| Vector Store | pgvector | - | Embeddings para RAG |
-| Validation | Pydantic | v2 | Structured outputs |
-| LLM Provider | Google Gemini | - | gemini-2.0-flash (raciocínio), gemini-2.0-flash-lite (tarefas simples) |
+O projeto usa o AgentOS do Agno como runtime principal. O entrypoint é [my_os.py](/home/matheusalves/Dev/projects/AGNO-AI-NF/my_os.py), que monta um `AgentOS`, registra o agente fiscal e expõe a API FastAPI nativa do Agno.
 
----
+Princípios desta arquitetura:
 
-## 2. Directory Structure
+- `my_os.py` deve ser fino e focado em bootstrap.
+- A resolução de provider deve ficar centralizada em [app/config/llm_provider.py](/home/matheusalves/Dev/projects/AGNO-AI-NF/app/config/llm_provider.py).
+- O mesmo `LLM_PROVIDER` controla chat e embeddings.
+- O ingest deve falhar cedo quando a configuração do provider estiver incompleta.
+- A base vetorial deve permanecer compatível com a dimensão definida no schema SQL.
 
-```
-fiscal_agent/
-├── app/
-│   ├── agents/
-│   │   ├── __init__.py
-│   │   ├── auditor.py        # Agente Principal
-│   │   └── reviewer.py       # Agente "Crítico" (Double check)
-│   │
-│   ├── knowledge/
-│   │   ├── __init__.py
-│   │   ├── rules_rag.py      # Config do PgVectorKnowledgeBase
-│   │   └── sources/          # PDFs/JSONs (Tabela TIPI, RICMS)
-│   │
-│   ├── tools/
-│   │   ├── __init__.py
-│   │   ├── nfe_parser.py     # Wrapper da nfelib (Custom Tool)
-│   │   └── tax_calculator.py # Calculadora determinística
-│   │
-│   ├── models/
-│   │   ├── __init__.py
-│   │   ├── nfe_schema.py     # Pydantic models espelhando a NFe
-│   │   └── report_schema.py  # Pydantic models do Output
-│   │
-│   └── main.py               # Entrypoint do AgentOS
-│
-├── storage/                  # Local storage (se não usar DB externo)
-├── scripts/                  # Scripts de seed (banco de dados)
-├── tests/
-├── .env
-├── Dockerfile
-└── requirements.txt
-```
+## Stack atual
 
----
+| Camada | Tecnologia |
+|--------|------------|
+| Runtime | Agno AgentOS |
+| API | FastAPI nativo do Agno |
+| Parsing XML | `nfelib` |
+| Modelos | Pydantic v2 |
+| Vector store | PostgreSQL 16 + pgvector |
+| Providers suportados | `gemini`, `ollama`, `huggingface` |
 
-## 3. Implementation Details & Coding Standards
+## Componentes
 
-### 3.1. Parsing de NFe (`app/tools/nfe_parser.py`)
+### Runtime
 
-> [!IMPORTANT]
-> **Regra de Ouro:** Não reinvente a roda. Use `nfelib`.
-> O Agente não deve ler o XML bruto (muitos tokens). A tool deve extrair e limpar.
+- [my_os.py](/home/matheusalves/Dev/projects/AGNO-AI-NF/my_os.py)
+- Responsável por:
+  - carregar env;
+  - construir o modelo via factory;
+  - registrar tools;
+  - subir o `AgentOS`.
 
-```python
-from agno.tools import Toolkit
-from nfelib.nfe.bindings.v4_0.nfe_v4_00 import Nfe
-import json
+### Configuração de provider
 
-class NfeToolkit(Toolkit):
-    def __init__(self):
-        super().__init__(name="nfe_tools")
-        self.register(self.parse_nfe)
+- [app/config/llm_provider.py](/home/matheusalves/Dev/projects/AGNO-AI-NF/app/config/llm_provider.py)
+- Responsável por:
+  - resolver `LLM_PROVIDER`;
+  - auto-detectar provider quando necessário;
+  - validar env vars;
+  - construir chat model;
+  - construir embedder.
 
-    def parse_nfe(self, xml_path: str) -> str:
-        """
-        Lê um arquivo XML de NFe e retorna um JSON estruturado com os itens e tributos.
-        Usa nfelib para garantir compatibilidade com o schema oficial.
-        """
-        nfe = Nfe.from_path(xml_path)
-        # Extrair apenas campos relevantes para reduzir contexto do LLM
-        items = []
-        for det in nfe.infNFe.det:
-            items.append({
-                "nItem": det.nItem,
-                "xProd": det.prod.xProd,
-                "NCM": det.prod.NCM,
-                "CFOP": det.prod.CFOP,
-                "uCom": det.prod.uCom,
-                "vProd": det.prod.vProd,
-                # Adicionar lógica para extrair CST/CSOSN que varia por regime
-            })
-        return json.dumps(items, indent=2)
-```
+Precedência de auto-detect:
 
-### 3.2. Structured Outputs (`app/models/report_schema.py`)
+1. `gemini`
+2. `ollama`
+3. `huggingface`
 
-> [!IMPORTANT]
-> O Agno deve ser forçado a responder usando Pydantic.
-> Isso é **crucial** para o frontend do SaaS.
+Se `LLM_PROVIDER` estiver definido, ele sempre vence a auto-detecção.
 
-```python
-from pydantic import BaseModel, Field
-from typing import List, Optional, Literal
+### Agentes
 
-class TaxInconsistency(BaseModel):
-    item_index: int = Field(..., description="Número do item na nota (nItem)")
-    severity: Literal["low", "medium", "high", "critical"]
-    issue_type: Literal["ncm_mismatch", "cst_invalid", "cfop_error", "cest_missing", "aliquot_error"]
-    description: str = Field(..., description="Explicação humana do erro")
-    suggested_fix: str = Field(..., description="Valor sugerido (ex: NCM correto)")
-    legal_reference: Optional[str] = Field(None, description="Lei ou norma citada")
+- [app/agents/auditor.py](/home/matheusalves/Dev/projects/AGNO-AI-NF/app/agents/auditor.py)
+- [app/agents/reviewer.py](/home/matheusalves/Dev/projects/AGNO-AI-NF/app/agents/reviewer.py)
 
-class AuditResult(BaseModel):
-    nfe_access_key: str
-    risk_score: int = Field(..., description="0 a 100, onde 100 é alto risco")
-    inconsistencies: List[TaxInconsistency]
+Regras:
+
+- devem usar `build_chat_model(...)`;
+- devem retornar `response_model=AuditResult`;
+- não devem instanciar provider diretamente.
+
+### Knowledge / ingest
+
+- [app/knowledge/rules_rag.py](/home/matheusalves/Dev/projects/AGNO-AI-NF/app/knowledge/rules_rag.py)
+- [scripts/load_knowledge.py](/home/matheusalves/Dev/projects/AGNO-AI-NF/scripts/load_knowledge.py)
+- [scripts/init_db.sql](/home/matheusalves/Dev/projects/AGNO-AI-NF/scripts/init_db.sql)
+
+Regras:
+
+- embeddings seguem o provider ativo;
+- a dimensão esperada vem da config;
+- o schema atual usa `vector(768)`;
+- mudanças de modelo de embedding fora desse padrão exigem migração de banco.
+
+## Variáveis públicas
+
+### Core
+
+```env
+LLM_PROVIDER=gemini|ollama|huggingface
+DATABASE_URL=postgresql://fiscal_user:fiscal_pass@localhost:5432/fiscal_agent
+EMBEDDING_DIMENSIONS=768
+HOST=0.0.0.0
+PORT=8000
+AGNO_RELOAD=false
 ```
 
-### 3.3. O Agente (`app/agents/auditor.py`)
+### Gemini
 
-> [!TIP]
-> Configure o agente com `structured_outputs=True` ou use `response_model`.
-
-```python
-from agno.agent import Agent
-from agno.models.google import Gemini
-from app.knowledge.rules_rag import tax_kb
-from app.tools.nfe_tools import NfeToolkit
-from app.models.report_schema import AuditResult
-
-fiscal_agent = Agent(
-    name="AuditorFiscal",
-    model=Gemini(id="gemini-2.0-flash"),
-    tools=[NfeToolkit()],
-    knowledge=tax_kb,
-    description="Você é um auditor tributário especialista em legislação brasileira (ICMS/IPI/PIS/COFINS).",
-    instructions=[
-        "Analise cada item da NFe",
-        "Valide NCM vs descrição do produto",
-        "Cruze CFOP com CST/CSOSN",
-        "Cite a legislação para cada inconsistência encontrada"
-    ],
-    response_model=AuditResult,  # FORÇA O OUTPUT JSON
-    show_tool_calls=True,
-    markdown=True
-)
+```env
+GOOGLE_API_KEY=...
+GEMINI_MODEL_ID=gemini-2.0-flash-001
+GEMINI_EMBEDDING_MODEL_ID=gemini-embedding-001
 ```
 
----
+### Ollama
 
-## 4. Base de Conhecimento (RAG)
-
-> [!WARNING]
-> **Não coloque toda a legislação no prompt.** Use PgVector.
-
-### Chunking Strategy
-
-| Estratégia | Descrição |
-|------------|-----------|
-| ✅ **Por Artigo/Seção** | Manter contexto legal intacto |
-| ❌ Por tamanho fixo | Quebra contexto, causa alucinações |
-
-### Setup do PgVectorKnowledgeBase
-
-```python
-from agno.knowledge.pgvector import PgVectorKnowledgeBase
-from agno.embeddings.google import GeminiEmbedder
-
-tax_kb = PgVectorKnowledgeBase(
-    table_name="tax_knowledge",
-    db_url="postgresql://user:pass@localhost:5432/fiscal_agent",
-    embedder=GeminiEmbedder(model="models/text-embedding-004"),
-)
+```env
+OLLAMA_HOST=http://localhost:11434
+OLLAMA_BASE_URL=
+OLLAMA_API_KEY=
+OLLAMA_MODEL_ID=llama3.2
+OLLAMA_EMBEDDING_MODEL_ID=nomic-embed-text
 ```
 
----
+### Hugging Face
 
-## 5. Diagrama de Fluxo de Auditoria
+```env
+HF_TOKEN=...
+HUGGINGFACE_API_KEY=
+HUGGINGFACE_BASE_URL=
+HUGGINGFACE_MODEL_ID=meta-llama/Llama-3.1-8B-Instruct
+HUGGINGFACE_EMBEDDING_MODEL_ID=sentence-transformers/all-mpnet-base-v2
+```
+
+## Fluxo principal
 
 ```mermaid
 flowchart TD
-    A[XML Upload] --> B[NfeToolkit.parse_nfe]
-    B --> C{Dados Extraídos}
-    C --> D[Auditoria Determinística]
-    C --> E[Auditoria Semântica LLM]
-    D --> F[Regras CFOP/CST]
-    E --> G[RAG Consulta TIPI]
-    E --> H[Análise NCM vs xProd]
-    F --> I[AuditResult JSON]
-    G --> I
-    H --> I
-    I --> J[Reviewer Agent]
-    J --> K[Output Final]
+    A[Boot de my_os.py] --> B[Resolver provider em llm_provider.py]
+    B --> C[Construir chat model]
+    C --> D[Registrar Agent no AgentOS]
+    D --> E[Subir FastAPI nativo do Agno]
+    E --> F[/docs]
+    E --> G[/config]
+    H[scripts/load_knowledge.py] --> I[Construir embedder do mesmo provider]
+    I --> J[Gerar embeddings]
+    J --> K[Persistir em pgvector]
 ```
 
----
+## Diretrizes de implementação
 
-## 6. Variáveis de Ambiente (.env)
-
-```env
-# Database
-DATABASE_URL=postgresql://user:password@localhost:5432/fiscal_agent
-
-# Google Gemini
-GOOGLE_API_KEY=your-gemini-api-key
-
-# AgentOS
-AGNO_DEBUG=true
-AGNO_LOG_LEVEL=INFO
-```
+- Não adicionar novos entrypoints HTTP manuais para fluxos que já cabem no AgentOS.
+- Não espalhar lógica de seleção de provider pelo código.
+- Não assumir Gemini como default sem passar pela factory.
+- Não trocar o modelo de embedding sem checar a dimensão da tabela.
+- Qualquer novo provider deve entrar primeiro em `app/config/llm_provider.py`, depois em docs e testes.

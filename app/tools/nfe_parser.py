@@ -9,6 +9,7 @@ REGRA DE OURO: Não reinventar a roda. Usar nfelib, não BeautifulSoup/Regex.
 
 from typing import Any
 import json
+from enum import Enum
 from pathlib import Path
 
 try:
@@ -62,7 +63,7 @@ class NfeParser:
         Returns:
             Dicionário com dados extraídos da NFe
         """
-        nfe = Nfe.from_string(xml_content)
+        nfe = Nfe.from_xml(xml_content)
         return self._extract_nfe_data(nfe)
     
     def _extract_nfe_data(self, nfe: Any) -> dict[str, Any]:
@@ -71,7 +72,8 @@ class NfeParser:
         
         Remove campos nulos/vazios para economizar tokens no LLM.
         """
-        inf_nfe = nfe.infNFe
+        nfe_root = getattr(nfe, "NFe", nfe)
+        inf_nfe = nfe_root.infNFe
         
         # Dados do emitente
         emit = self._extract_emit(inf_nfe.emit)
@@ -86,7 +88,7 @@ class NfeParser:
         totals = self._extract_totals(inf_nfe.total)
         
         result = {
-            "chave_acesso": self._get_access_key(nfe),
+            "chave_acesso": self._get_access_key(nfe_root),
             "numero": getattr(inf_nfe.ide, 'nNF', None),
             "serie": getattr(inf_nfe.ide, 'serie', None),
             "data_emissao": str(getattr(inf_nfe.ide, 'dhEmi', '')),
@@ -308,6 +310,10 @@ class NfeParser:
             }
         elif isinstance(data, list):
             return [self._clean_empty_fields(item) for item in data if item]
+        elif isinstance(data, Enum):
+            return data.value
+        elif hasattr(data, "value"):
+            return data.value
         return data
     
     def to_json(self, nfe_data: dict, indent: int = 2) -> str:

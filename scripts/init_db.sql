@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS tax_knowledge (
     id SERIAL PRIMARY KEY,
     content TEXT NOT NULL,
     metadata JSONB,
-    embedding vector(768),  -- Gemini text-embedding-004 dimension
+    embedding vector(768),  -- Dimensão padrão do projeto para embeddings multi-provider
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

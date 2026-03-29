@@ -1,0 +1,12 @@
+model = "gpt-5"
+reasoning_effort = "high"
+
+# Add your MCP servers here.
+# Example shape only; fill in for your environment.
+[mcp_servers]
+# linear = { command = "npx", args = ["-y", "@modelcontextprotocol/server-linear"] }
+# figma = { command = "npx", args = ["-y", "figma-mcp"] }
+# context7 = { command = "npx", args = ["-y", "context7-mcp"] }
+
+[project]
+trusted = true

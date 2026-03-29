@@ -1,6 +1,6 @@
 # Checklist: Agente Fiscal MVP
 
-> **Status: ✅ MVP FUNCIONANDO** | AgentOS + Gemini
+> **Status: ✅ MVP FUNCIONANDO** | AgentOS + Multi-provider (`gemini`, `ollama`, `huggingface`)
 
 ---
 
@@ -24,11 +24,8 @@
 ## 🚀 Como Rodar
 
 ```bash
-# AgentOS (porta 7777)
+# Runtime principal do AgentOS
 python my_os.py
-
-# API FastAPI (porta 8000)
-python -m app.main
 ```
 
-> Última atualização: 2025-12-29
+> Última atualização: 2026-03-28

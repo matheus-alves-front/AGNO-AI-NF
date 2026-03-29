@@ -196,7 +196,7 @@ Fase 3: Lógica do Agente (Brain)
 * [ ] Integration Test: Rodar o agente via script Python simples passando um XML e validando se ele cospe o JSON correto.
 Fase 4: Interface & AgentOS Serving
 * [ ] API Endpoint: O AgentOS expõe FastAPI automaticamente, mas verifique as rotas.
-* [ ] Playground: Usar o Agno Playground para testar upload de arquivo.
+* [ ] Validar o runtime principal do AgentOS (`my_os.py`) e suas rotas nativas antes de criar frontend próprio.
 * [ ] PDF Generation: (Opcional para MVP 1.0) Criar uma tool simples generate_pdf_report usando fpdf que recebe o JSON do agente e cria um arquivo visual.
 Fase 5: Validação Final (Quality Assurance)
 * [ ] Stress Test: Enviar 10 XMLs simultaneamente.

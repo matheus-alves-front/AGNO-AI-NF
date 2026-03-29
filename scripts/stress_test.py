@@ -10,10 +10,15 @@ Uso:
 import asyncio
 import time
 import json
+import sys
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 
 import httpx
+
+ROOT_DIR = Path(__file__).resolve().parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
 
 
 # Configurações
@@ -65,10 +70,10 @@ SAMPLE_NFE_DATA = {
 
 
 async def check_health():
-    """Verifica se a API está disponível."""
+    """Verifica se o AgentOS está disponível."""
     async with httpx.AsyncClient() as client:
         try:
-            response = await client.get(f"{API_URL}/health")
+            response = await client.get(f"{API_URL}/config")
             return response.status_code == 200
         except Exception:
             return False
@@ -84,8 +89,7 @@ async def single_audit_request(request_id: int) -> dict:
     
     async with httpx.AsyncClient(timeout=TIMEOUT) as client:
         try:
-            # Como não temos XML real, vamos testar o health e parse
-            response = await client.get(f"{API_URL}/")
+            response = await client.get(f"{API_URL}/config")
             
             elapsed = time.time() - start_time
             
@@ -125,7 +129,7 @@ async def run_stress_test():
     print("\n🔍 Verificando disponibilidade da API...")
     if not await check_health():
         print("❌ API não está disponível!")
-        print("   Execute: python -m app.main")
+        print("   Execute: python my_os.py")
         return
     print("✅ API disponível\n")
     

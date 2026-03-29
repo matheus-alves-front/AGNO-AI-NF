@@ -10,6 +10,7 @@ Estratégia de Chunking: Por Artigo/Seção para manter contexto legal intacto.
 import os
 from typing import Any
 
+from app.config.llm_provider import build_embedder, get_provider_config
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -37,50 +38,49 @@ class TaxKnowledgeBase:
         self,
         db_url: str = DATABASE_URL,
         table_name: str = "tax_knowledge",
-        embedding_dimension: int = 768,  # Gemini text-embedding-004
+        embedding_dimension: int | None = None,
     ):
+        config = get_provider_config()
         self.db_url = db_url
         self.table_name = table_name
-        self.embedding_dimension = embedding_dimension
-        self._embedder = None
+        self.embedding_dimension = embedding_dimension or config.embedding_dimensions
+        self._document_embedder = None
+        self._query_embedder = None
         self._db = None
     
     @property
-    def embedder(self):
-        """Lazy load do embedder Gemini."""
-        if self._embedder is None:
-            try:
-                import google.generativeai as genai
-                
-                api_key = os.getenv("GOOGLE_API_KEY")
-                if api_key:
-                    genai.configure(api_key=api_key)
-                
-                self._embedder = genai.embed_content
-            except ImportError:
-                raise ImportError(
-                    "google-generativeai não está instalado. "
-                    "Execute: pip install google-generativeai"
-                )
-        return self._embedder
+    def document_embedder(self):
+        """Lazy load do embedder usado para documentos."""
+        if self._document_embedder is None:
+            self._document_embedder = build_embedder(task_type="RETRIEVAL_DOCUMENT")
+        return self._document_embedder
+
+    @property
+    def query_embedder(self):
+        """Lazy load do embedder usado para queries."""
+        if self._query_embedder is None:
+            self._query_embedder = build_embedder(task_type="RETRIEVAL_QUERY")
+        return self._query_embedder
     
     def get_embedding(self, text: str) -> list[float]:
-        """Gera embedding para um texto usando Gemini."""
-        result = self.embedder(
-            model="models/text-embedding-004",
-            content=text,
-            task_type="retrieval_document",
-        )
-        return result['embedding']
+        """Gera embedding para um texto de documento."""
+        embedding = self.document_embedder.get_embedding(text)
+        if len(embedding) != self.embedding_dimension:
+            raise ValueError(
+                f"Dimensão de embedding inválida para documento: "
+                f"esperado={self.embedding_dimension}, recebido={len(embedding)}"
+            )
+        return embedding
     
     def get_query_embedding(self, query: str) -> list[float]:
         """Gera embedding para uma query de busca."""
-        result = self.embedder(
-            model="models/text-embedding-004",
-            content=query,
-            task_type="retrieval_query",
-        )
-        return result['embedding']
+        embedding = self.query_embedder.get_embedding(query)
+        if len(embedding) != self.embedding_dimension:
+            raise ValueError(
+                f"Dimensão de embedding inválida para query: "
+                f"esperado={self.embedding_dimension}, recebido={len(embedding)}"
+            )
+        return embedding
     
     def add_document(
         self, 

@@ -131,7 +131,7 @@ Gere laudos profissionais para apresentar a clientes ou órgãos fiscalizadores.
 
 ## Tecnologia
 
-- **LLM:** Google Gemini 2.0 Flash
+- **LLM:** Configurável via `LLM_PROVIDER` (`gemini`, `ollama`, `huggingface`)
 - **Framework:** Agno (AgentOS)
 - **Base Vetorial:** PostgreSQL + pgvector
 - **API:** FastAPI (Python)

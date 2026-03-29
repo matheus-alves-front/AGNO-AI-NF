@@ -4,13 +4,13 @@ Auditor Agent - Agente Principal de Auditoria Fiscal
 Este é o agente responsável por analisar NFes e identificar
 inconsistências tributárias usando análise híbrida:
 - Regras determinísticas (Python puro)
-- Análise semântica (LLM Gemini)
+- Análise semântica (LLM configurável)
 - RAG jurídico (consulta à legislação)
 """
 
 from agno.agent import Agent
-from agno.models.google import Gemini
 
+from app.config.llm_provider import build_chat_model
 from app.models.report_schema import AuditResult
 
 
@@ -60,6 +60,11 @@ Cada inconsistência deve ter:
 - Sugestão de correção
 - Referência legal quando possível
 
+PATCHES DE CORREÇÃO:
+- Sempre que possível, preencha correction_patches.
+- Cada patch deve indicar item, campo afetado, valor atual, valor sugerido e motivo.
+- Não invente patch quando não houver confiança suficiente.
+
 IMPORTANTE:
 - Não invente leis ou normas
 - Se não tiver certeza, indique confidence baixo
@@ -94,7 +99,7 @@ Referência: Resolução SF nº 13/2012
 
 
 def create_auditor_agent(
-    model_id: str = "gemini-2.0-flash",
+    model_id: str | None = None,
     temperature: float = 0.1,
     debug: bool = False,
     use_knowledge: bool = True
@@ -103,7 +108,7 @@ def create_auditor_agent(
     Cria e configura o agente auditor fiscal.
     
     Args:
-        model_id: ID do modelo Gemini a usar
+        model_id: Override opcional do modelo configurado por provider
         temperature: Temperatura do modelo (0.0 = mais determinístico)
         debug: Se True, mostra tool calls
         use_knowledge: Se True, integra com base de conhecimento RAG
@@ -135,9 +140,7 @@ def create_auditor_agent(
     
     agent = Agent(
         name="AuditorFiscal",
-        model=Gemini(
-            id=model_id,
-        ),
+        model=build_chat_model(model_id=model_id, temperature=temperature),
         description=(
             "Auditor tributário especialista em legislação brasileira. "
             "Analisa NFes e identifica inconsistências em NCM, CST, CFOP, "
@@ -145,7 +148,8 @@ def create_auditor_agent(
         ),
         instructions=full_instructions,
         output_schema=AuditResult,
-        debug_mode=debug,
+        structured_outputs=True,
+        show_tool_calls=debug,
         markdown=True,
     )
     

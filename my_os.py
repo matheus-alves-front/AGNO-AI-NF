@@ -1,25 +1,134 @@
 """
-AgentOS Server - Agente Fiscal com RAG e Tools
+AgentOS Server - Agente Fiscal com runtime nativo do Agno.
 
-Versão completa com:
-- Base de conhecimento RAG (TIPI, CFOP, CST)
-- Tool para parsear XML de NFe
-- Integração com AgentOS Control Plane
-- Text-to-Speech via ElevenLabs
+Este arquivo é o entrypoint principal do projeto.
+Ele sobe o AgentOS com provider configurável via `LLM_PROVIDER`
+e expõe a API FastAPI nativa do Agno em `/docs` e `/config`.
 """
 
-from dotenv import load_dotenv
-load_dotenv()
-
-import os
 import json
-from typing import Optional
+import os
+from pathlib import Path
 
 from agno.agent import Agent
-from agno.models.google import Gemini
-from agno.db.sqlite import AsyncSqliteDb
+from agno.db.sqlite import SqliteDb
+from agno.media import File
 from agno.os import AgentOS
+from agno.run import RunContext
 from agno.tools import tool
+from dotenv import load_dotenv
+
+from app.config.llm_provider import build_chat_model, get_startup_summary
+from app.models.report_schema import AuditResult
+from app.tools.nfe_parser import NFELIB_AVAILABLE, nfe_toolkit
+
+load_dotenv()
+
+
+def _env_flag(name: str, default: bool = False) -> bool:
+    value = os.getenv(name)
+    if value is None:
+        return default
+    return value.strip().lower() in {"1", "true", "yes", "on"}
+
+
+def _ensure_session_state(run_context: RunContext) -> dict:
+    if run_context.session_state is None:
+        run_context.session_state = {}
+    return run_context.session_state
+
+
+def _reset_nfe_session(run_context: RunContext) -> None:
+    state = _ensure_session_state(run_context)
+    state["current_nfe_status"] = "Nenhuma NFe carregada nesta sessão."
+    state.pop("current_nfe_source", None)
+    state.pop("current_nfe_filename", None)
+    state.pop("current_nfe_xml", None)
+    state.pop("current_nfe_parsed", None)
+    state.pop("current_audit_result", None)
+
+
+def _looks_like_nfe_xml(text: str) -> bool:
+    lowered = text.lower()
+    return (
+        "<nfeproc" in lowered
+        or "<nfe " in lowered
+        or "<nfe>" in lowered
+        or "http://www.portalfiscal.inf.br/nfe" in lowered
+    )
+
+
+def _read_file_text(file: File) -> tuple[str | None, str]:
+    filename = file.filename or file.name
+    if filename is None and file.filepath:
+        filename = Path(file.filepath).name
+    if filename is None and file.url:
+        filename = file.url.rsplit("/", 1)[-1]
+
+    if file.content is not None:
+        if isinstance(file.content, bytes):
+            return file.content.decode("utf-8"), filename or "arquivo.xml"
+        return str(file.content), filename or "arquivo.xml"
+
+    if file.filepath:
+        path = Path(file.filepath)
+        return path.read_text(encoding="utf-8"), filename or path.name
+
+    raise ValueError("Arquivo recebido sem conteúdo legível.")
+
+
+def _validate_xml_file(file: File, filename: str) -> None:
+    mime_type = (file.mime_type or "").lower()
+    suffix = Path(filename).suffix.lower()
+    if mime_type and "xml" in mime_type:
+        return
+    if suffix == ".xml":
+        return
+    raise ValueError(
+        f"Arquivo '{filename}' não é um XML suportado. Envie um arquivo XML de NFe."
+    )
+
+
+def _parse_xml_to_dict(xml_content: str) -> dict:
+    if not NFELIB_AVAILABLE:
+        raise RuntimeError("nfelib não disponível no ambiente.")
+
+    parsed_json = nfe_toolkit.parse_nfe_content(xml_content)
+    parsed = json.loads(parsed_json)
+    if "error" in parsed:
+        raise ValueError(parsed["error"])
+    return parsed
+
+
+def _run_structured_audit(nfe_data: dict) -> AuditResult:
+    from app.agents.auditor import audit_nfe_sync
+
+    return audit_nfe_sync(nfe_data)
+
+
+def _build_nfe_status(parsed_nfe: dict, source: str) -> str:
+    chave = parsed_nfe.get("chave_acesso", "sem-chave")
+    numero = parsed_nfe.get("numero", "s/n")
+    total_itens = len(parsed_nfe.get("itens", []))
+    return (
+        f"NFe carregada da fonte '{source}' | chave: {chave} | "
+        f"número: {numero} | itens: {total_itens}"
+    )
+
+
+def _format_audit_summary(audit_result: AuditResult) -> str:
+    if not audit_result.inconsistencies:
+        return (
+            f"Resumo executivo: score de risco {audit_result.risk_score}/100. "
+            "Nenhuma inconsistência foi identificada."
+        )
+
+    return (
+        f"Resumo executivo: score de risco {audit_result.risk_score}/100, "
+        f"{len(audit_result.inconsistencies)} inconsistência(s) encontrada(s). "
+        f"Itens analisados: {audit_result.total_items_analyzed}. "
+        f"Síntese: {audit_result.summary}"
+    )
 
 # ElevenLabs TTS (opcional)
 try:
@@ -30,6 +139,141 @@ except ImportError:
 
 
 # ==================== TOOLS ====================
+
+
+@tool
+def parse_nfe_xml(xml_content: str) -> str:
+    """
+    Parseia o XML bruto de uma NFe e retorna um JSON estruturado.
+
+    Use esta tool quando o usuário colar o XML completo da nota fiscal
+    diretamente na conversa do AgentOS.
+    """
+    if not NFELIB_AVAILABLE:
+        return json.dumps({"error": "nfelib não disponível no ambiente"})
+
+    return nfe_toolkit.parse_nfe_content(xml_content)
+
+
+@tool
+def load_nfe_input(
+    run_context: RunContext,
+    xml_content: str | None = None,
+    files: list[File] | None = None,
+) -> str:
+    return _load_nfe_input(run_context=run_context, xml_content=xml_content, files=files)
+
+
+def _load_nfe_input(
+    run_context: RunContext,
+    xml_content: str | None = None,
+    files: list[File] | None = None,
+) -> str:
+    """
+    Carrega uma NFe a partir de um XML anexado ou colado na conversa.
+
+    Args:
+        xml_content: XML bruto colado pelo usuário quando não houver anexo.
+
+    Returns:
+        Resumo do carregamento da NFe.
+    """
+    state = _ensure_session_state(run_context)
+
+    try:
+        if files:
+            if len(files) != 1:
+                raise ValueError("Envie apenas 1 arquivo XML de NFe por vez.")
+            xml_file = files[0]
+            file_text, filename = _read_file_text(xml_file)
+            _validate_xml_file(xml_file, filename)
+            source = f"arquivo:{filename}"
+            xml_payload = file_text
+        else:
+            if not xml_content or not xml_content.strip():
+                raise ValueError("Nenhum XML foi fornecido na mensagem.")
+            if not _looks_like_nfe_xml(xml_content):
+                raise ValueError("O conteúdo enviado não parece ser um XML de NFe válido.")
+            source = "texto-colado"
+            filename = None
+            xml_payload = xml_content
+
+        parsed_nfe = _parse_xml_to_dict(xml_payload)
+        state["current_nfe_source"] = source
+        state["current_nfe_filename"] = filename
+        state["current_nfe_xml"] = xml_payload
+        state["current_nfe_parsed"] = parsed_nfe
+        state["current_audit_result"] = None
+        state["current_nfe_status"] = _build_nfe_status(parsed_nfe, source)
+        return (
+            f"NFe carregada com sucesso. {state['current_nfe_status']}. "
+            "Agora use a tool de auditoria para gerar a análise completa."
+        )
+    except Exception as exc:
+        _reset_nfe_session(run_context)
+        return f"Erro ao carregar a NFe: {exc}"
+
+
+@tool
+def audit_current_nfe(run_context: RunContext) -> str:
+    return _audit_current_nfe(run_context=run_context)
+
+
+def _audit_current_nfe(run_context: RunContext) -> str:
+    """
+    Executa a auditoria estruturada da NFe carregada na sessão atual.
+
+    Returns:
+        JSON do resultado estruturado da auditoria.
+    """
+    state = _ensure_session_state(run_context)
+    parsed_nfe = state.get("current_nfe_parsed")
+    if not parsed_nfe:
+        return "Nenhuma NFe está carregada na sessão. Primeiro carregue um XML."
+
+    audit_result = _run_structured_audit(parsed_nfe)
+    state["current_audit_result"] = audit_result.model_dump(mode="json")
+    return audit_result.model_dump_json(indent=2)
+
+
+@tool
+def summarize_current_audit(run_context: RunContext) -> str:
+    return _summarize_current_audit(run_context=run_context)
+
+
+def _summarize_current_audit(run_context: RunContext) -> str:
+    """
+    Resume a auditoria atual armazenada na sessão.
+
+    Returns:
+        Resumo executivo da última auditoria executada.
+    """
+    state = _ensure_session_state(run_context)
+    current_audit = state.get("current_audit_result")
+    if not current_audit:
+        return "Nenhuma auditoria foi executada nesta sessão."
+
+    audit_result = AuditResult.model_validate(current_audit)
+    return _format_audit_summary(audit_result)
+
+
+@tool
+def get_current_audit_result(run_context: RunContext) -> str:
+    return _get_current_audit_result(run_context=run_context)
+
+
+def _get_current_audit_result(run_context: RunContext) -> str:
+    """
+    Retorna o JSON completo da auditoria atual armazenada na sessão.
+
+    Returns:
+        JSON completo da última auditoria executada.
+    """
+    state = _ensure_session_state(run_context)
+    current_audit = state.get("current_audit_result")
+    if not current_audit:
+        return "Nenhuma auditoria foi executada nesta sessão."
+    return json.dumps(current_audit, indent=2, ensure_ascii=False)
 
 @tool
 def buscar_ncm(ncm: str) -> str:
@@ -177,12 +421,33 @@ def validar_icms_interestadual(origem: str, uf_origem: str, uf_destino: str) -> 
 AUDITOR_SYSTEM_PROMPT = """Você é o AuditorFiscal, especialista em compliance tributário brasileiro.
 
 VOCÊ TEM ACESSO A TOOLS PARA CONSULTAR:
+- load_nfe_input: carrega automaticamente XML anexado ou XML colado
+- audit_current_nfe: executa a auditoria estruturada da NFe da sessão
+- summarize_current_audit: gera o resumo executivo da auditoria atual
+- get_current_audit_result: retorna o JSON completo da auditoria atual
 - buscar_ncm: Consulta a Tabela TIPI
 - buscar_cfop: Consulta tabela de CFOPs
 - buscar_cst: Consulta CST e CSOSN
 - validar_icms_interestadual: Valida alíquotas
 
+FLUXO OBRIGATÓRIO QUANDO O USUÁRIO ENVIAR UMA NFe:
+1. Se houver um arquivo XML anexado, chame load_nfe_input imediatamente.
+2. Se o usuário colar um XML bruto, chame load_nfe_input passando o XML no argumento xml_content.
+3. Depois de carregar a nota, chame audit_current_nfe.
+4. Em seguida, chame summarize_current_audit.
+5. Responda ao usuário com:
+   - resumo executivo legível;
+   - principais inconsistências;
+   - JSON estruturado se ele pedir ou se for útil para a auditoria.
+
+USO DE SESSÃO:
+- Se já existir uma NFe carregada na sessão, use a auditoria armazenada para responder perguntas de follow-up.
+- Use get_current_audit_result quando precisar consultar o resultado completo.
+
 USE AS TOOLS para fundamentar suas análises com dados reais.
+
+ESTADO DA SESSÃO:
+{current_nfe_status}
 
 REGRAS DE ANÁLISE:
 1. NCM vs Descrição: Cerveja ≠ Refrigerante
@@ -220,17 +485,35 @@ if ELEVENLABS_AVAILABLE:
 # ==================== AGENTE ====================
 
 # Lista de tools base
-base_tools = [buscar_ncm, buscar_cfop, buscar_cst, validar_icms_interestadual]
+base_tools = [
+    parse_nfe_xml,
+    load_nfe_input,
+    audit_current_nfe,
+    summarize_current_audit,
+    get_current_audit_result,
+    buscar_ncm,
+    buscar_cfop,
+    buscar_cst,
+    validar_icms_interestadual,
+]
 if elevenlabs_tools:
     base_tools.append(elevenlabs_tools)
 
 auditor_agent = Agent(
     name="AuditorFiscal",
-    model=Gemini(id="gemini-2.0-flash"),
-    db=AsyncSqliteDb(db_file="fiscal_agent.db"),
-    description="Auditor tributário com acesso a base de conhecimento fiscal (TIPI, CFOP, CST) e geração de áudio. Analisa NFes e identifica inconsistências.",
+    model=build_chat_model(temperature=0.1),
+    db=SqliteDb(db_file="fiscal_agent.db"),
+    session_state={"current_nfe_status": "Nenhuma NFe carregada nesta sessão."},
+    description=(
+        "Auditor tributário com acesso a base de conhecimento fiscal "
+        "(TIPI, CFOP, CST), intake automático de XML de NFe, auditoria estruturada "
+        "e geração opcional de áudio."
+    ),
     instructions=[AUDITOR_SYSTEM_PROMPT],
     tools=base_tools,
+    add_datetime_to_context=True,
+    send_media_to_model=False,
+    store_media=True,
     markdown=True,
 )
 
@@ -239,11 +522,19 @@ auditor_agent = Agent(
 
 agent_os = AgentOS(
     id="fiscal-agent-os",
+    name="Agente Fiscal Inteligente",
     description="Agente Fiscal Inteligente - Auditoria de NFe com IA e base de conhecimento tributário",
+    db=SqliteDb(db_file="fiscal_agent.db"),
     agents=[auditor_agent],
 )
 
 app = agent_os.get_app()
 
 if __name__ == "__main__":
-    agent_os.serve(app="my_os:app", reload=True)
+    print(f"LLM ativo: {get_startup_summary()}")
+    agent_os.serve(
+        app="my_os:app",
+        host=os.getenv("HOST", "0.0.0.0"),
+        port=int(os.getenv("PORT", "8000")),
+        reload=_env_flag("AGNO_RELOAD", default=False),
+    )

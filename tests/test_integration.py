@@ -6,6 +6,7 @@ Testa o fluxo completo: parse -> auditoria -> output estruturado.
 
 import pytest
 import json
+import os
 from pathlib import Path
 
 # Adiciona o diretório raiz ao path
@@ -295,8 +296,9 @@ class TestIntegration:
     """Testes de integração do fluxo completo."""
     
     @pytest.mark.skipif(
-        not Path(__file__).parent.parent.joinpath(".env").exists(),
-        reason="Arquivo .env não configurado"
+        Path(__file__).parent.parent.joinpath(".env").exists() is False
+        or os.getenv("RUN_LIVE_MODEL_TESTS", "").lower() not in {"1", "true", "yes"},
+        reason="Teste live desabilitado por padrão"
     )
     def test_full_audit_flow(self):
         """
